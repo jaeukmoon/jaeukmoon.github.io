@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 84 96">
+  <rect width="84" height="96" fill="none"/>
+  <polygon points="42,4 80,26 80,70 42,92 4,70 4,26" stroke="#64ffda" stroke-width="6" fill="#0a192f"/>
+  <text x="42" y="62" text-anchor="middle" font-family="'Fira Code','SF Mono',monospace" font-size="38" fill="#64ffda">J</text>
+</svg>
