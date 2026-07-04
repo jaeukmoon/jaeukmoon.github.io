@@ -48,6 +48,7 @@
           <li><a href="#projects"><span>04.</span> Projects</a></li>
           <li><a href="#contact"><span>05.</span> Contact</a></li>
         </ol>
+        <a class="btn nav__resume" href="assets/resume.pdf" target="_blank" rel="noreferrer noopener">Resume</a>
       </div>
     </nav>
   </header>
@@ -134,6 +135,11 @@
           </div>
         </div>
         <aside class="about__edu" aria-label="Education">
+          <div class="about__pic">
+            <div class="about__pic-wrapper">
+              <img src="assets/profile-placeholder.svg" alt="Portrait of Jaeuk Moon" width="300" height="300">
+            </div>
+          </div>
           <h3 class="about__edu-title">Education</h3>
           <div class="edu-item">
             <p class="edu-item__degree">Ph.D. in Electrical and Computer Engineering</p>
@@ -209,31 +215,56 @@
             <li>LLM</li><li>Multimodal</li><li>LoRA/PEFT</li><li>Prompting</li><li>Influenza Forecasting</li>
           </ul>
         </li>
+      </ul>
 
-        <li class="research-card reveal">
-          <p class="research-card__overline">Featured Research</p>
-          <h3 class="research-card__title">RESEAT: Multi-Regional Time-Series Forecasting</h3>
-          <div class="research-card__desc">
-            <p>Recurrent self-attention network where LSTMs learn per-region temporal patterns and recurrently connected attention weights model dynamically changing inter-regional relationships, outperforming SOTA on influenza/COVID-19 forecasting while visualizing region correlations.</p>
+      <ul class="featured-list">
+        <li class="featured reveal">
+          <div class="featured__content">
+            <p class="featured__overline">Featured Research</p>
+            <h3 class="featured__title">RESEAT: Multi-Regional Time-Series Forecasting</h3>
+            <div class="featured__desc">
+              <p>Recurrent self-attention network where LSTMs learn per-region temporal patterns and recurrently connected attention weights model dynamically changing inter-regional relationships, outperforming SOTA on influenza/COVID-19 forecasting while visualizing region correlations.</p>
+            </div>
+            <ul class="featured__tags"><li>Self-Attention</li><li>LSTM</li><li>Multivariate Time Series</li><li>Interpretability</li></ul>
+            <p class="featured__venue"><a class="inline-link" href="https://doi.org/10.1109/JBHI.2023.3247687" target="_blank" rel="noreferrer noopener">IEEE Journal of Biomedical and Health Informatics, 2023</a></p>
           </div>
-          <p class="research-card__venue">IEEE Journal of Biomedical and Health Informatics, 2023</p>
-          <ul class="research-card__tags">
-            <li>Self-Attention</li><li>LSTM</li><li>Multivariate Time Series</li><li>Interpretability</li>
-          </ul>
+          <a class="featured__img" href="https://doi.org/10.1109/JBHI.2023.3247687" target="_blank" rel="noreferrer noopener" aria-label="RESEAT: Multi-Regional Time-Series Forecasting — paper">
+            <img src="assets/research/reseat-attention.png" alt="RESEAT self-attention heatmap of inter-regional influenza relationships across Japanese prefectures" loading="lazy">
+          </a>
         </li>
 
-        <li class="research-card reveal">
-          <p class="research-card__overline">Featured Research</p>
-          <h3 class="research-card__title">GAN-Based Data Augmentation for Load Forecasting</h3>
-          <div class="research-card__desc">
-            <p>A two-stage generation scheme — CTGAN synthesizes virtual input variables, then a regression model trained on real data produces the corresponding outputs — that consistently boosts short-term electric load forecasting accuracy in data-scarce settings.</p>
+        <li class="featured reveal">
+          <div class="featured__content">
+            <p class="featured__overline">Featured Research</p>
+            <h3 class="featured__title">GAN-Based Data Augmentation for Load Forecasting</h3>
+            <div class="featured__desc">
+              <p>A two-stage generation scheme — CTGAN synthesizes virtual input variables, then a regression model trained on real data produces the corresponding outputs — that consistently boosts short-term electric load forecasting accuracy in data-scarce settings.</p>
+            </div>
+            <ul class="featured__tags"><li>CTGAN</li><li>Data Augmentation</li><li>Load Forecasting</li></ul>
+            <p class="featured__venue"><a class="inline-link" href="https://doi.org/10.1109/ACCESS.2020.3037063" target="_blank" rel="noreferrer noopener">IEEE Access, 2020</a></p>
           </div>
-          <p class="research-card__venue">IEEE Access, 2020</p>
-          <ul class="research-card__tags">
-            <li>CTGAN</li><li>Data Augmentation</li><li>Load Forecasting</li>
-          </ul>
+          <a class="featured__img" href="https://doi.org/10.1109/ACCESS.2020.3037063" target="_blank" rel="noreferrer noopener" aria-label="GAN-Based Data Augmentation for Load Forecasting — paper">
+            <img src="assets/research/ctgan-distribution.png" alt="Principal-component distribution of CTGAN-generated electric load data" loading="lazy">
+          </a>
         </li>
 
+        <li class="featured reveal">
+          <div class="featured__content">
+            <p class="featured__overline">Featured Research</p>
+            <h3 class="featured__title">Meta-Learning (MAML) for Data-Scarce Prediction</h3>
+            <div class="featured__desc">
+              <p>Region-adaptive MAML initialization for influenza forecasting (MARAPAS), and TAPT — a task-adaptive parameter transformation that improves few-shot animal sound classification accuracy by up to 20.32% over ProtoNet on public benchmarks.</p>
+            </div>
+            <ul class="featured__tags"><li>MAML</li><li>Few-Shot Learning</li><li>Meta-Learning</li><li>Bioacoustics</li></ul>
+            <p class="featured__venue"><a class="inline-link" href="https://doi.org/10.1016/j.jksuci.2022.11.009" target="_blank" rel="noreferrer noopener">Journal of King Saud University – Computer and Information Sciences, 2023</a></p>
+          </div>
+          <a class="featured__img" href="https://doi.org/10.1016/j.jksuci.2022.11.009" target="_blank" rel="noreferrer noopener" aria-label="Meta-Learning (MAML) for Data-Scarce Prediction — paper">
+            <img src="assets/research/marapas-forecast.png" alt="MARAPAS influenza forecasts versus DNN and MAML baselines on Japanese prefecture data" loading="lazy">
+          </a>
+        </li>
+      </ul>
+
+      <ul class="research-list">
         <li class="research-card reveal">
           <p class="research-card__overline">Featured Research</p>
           <h3 class="research-card__title">Two-Stage Data Selection for Long-Term Influenza Forecasting</h3>
@@ -243,18 +274,6 @@
           <p class="research-card__venue">Computers, Materials &amp; Continua, 2021</p>
           <ul class="research-card__tags">
             <li>Feature Selection</li><li>Long-Term Forecasting</li><li>Machine Learning</li>
-          </ul>
-        </li>
-
-        <li class="research-card reveal">
-          <p class="research-card__overline">Featured Research</p>
-          <h3 class="research-card__title">Meta-Learning (MAML) for Data-Scarce Prediction &amp; Classification</h3>
-          <div class="research-card__desc">
-            <p>Region-adaptive MAML initialization for influenza forecasting, and TAPT — a task-adaptive parameter transformation that improves few-shot animal sound classification accuracy by up to 20.32% over ProtoNet on public benchmarks.</p>
-          </div>
-          <p class="research-card__venue">Journal of King Saud University – Computer and Information Sciences, 2023 · Applied Sciences, 2024</p>
-          <ul class="research-card__tags">
-            <li>MAML</li><li>Few-Shot Learning</li><li>Meta-Learning</li><li>Bioacoustics</li>
           </ul>
         </li>
 

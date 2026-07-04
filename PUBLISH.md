@@ -29,11 +29,14 @@ done
 3. 위 게이트 스캔 0건 확인 → commit → push (Pages 자동 배포)
 
 ## 보류 중 (사용자 자산 필요)
-- [ ] 프로필 사진 (About 우측 v4 스타일 — 사진 제공 시 추가)
-- [ ] 공개용 sanitized resume PDF (`assets/resume.pdf` + 네비 Resume 버튼)
-- [ ] Research 카드 v4 오버랩 레이아웃용 논문 대표 그림
+- [~] 프로필 사진 — v4 프레임+슬롯 구현됨(2026-07-05), 현재 JM 모노그램 placeholder.
+      실사진 받으면 `assets/profile.jpg`로 넣고 index.html의 src만 교체
+- [x] 공개용 sanitized resume PDF — `assets/resume.pdf` + 네비 Resume 버튼 (2026-07-05).
+      원본 docx 헤더에 집주소·개인 이메일 있음 → 직접 변환 금지, Chrome headless로 클린 HTML에서 생성
+- [x] Research 대표 그림 — RESEAT 어텐션 히트맵·CTGAN PCA 분포·MARAPAS 예측 플롯 3종,
+      v4 오버랩 featured 카드 (`assets/research/`, 원본: RESEAT/MAML/CTGAN repo 실험 산출물)
 - [x] 논문 DOI 링크 — 8편 전부 Crossref 검증 후 제목에 연결 (2026-07-05)
-- [ ] 비공개 repo 3개(explainable-ILI-Forecasting, csat-eval, Slime-NeMo-gym) 공개 전환 여부 —
-      전환 시 프로젝트 카드에 링크 복원 (Slime-NeMo-gym은 사내 정보 포함 여부 선검토)
+- [x] 비공개 repo 3개(explainable-ILI-Forecasting, csat-eval, Slime-NeMo-gym) — **비공개 유지 확정**
+      (사용자 결정 2026-07-05). 카드 링크 제거 상태 유지; 공개 전환 시에만 링크 복원
 - [ ] 박사논문 공식 제목 확인: resume("LLM-Based Explainable Forecasting Scheme Using Multi-Modality")
       vs CV/portfolio("Infectious Diseases Occurrence Forecasting Scheme based on LLM") 불일치

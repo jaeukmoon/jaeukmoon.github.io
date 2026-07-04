@@ -1136,3 +1136,185 @@ main {
     transform: none;
   }
 }
+
+/* ===== Nav resume button ===== */
+.nav__resume {
+  margin-left: 15px;
+  padding: 0.6rem 1rem;
+}
+@media (max-width: 768px) {
+  .nav__links .nav__resume {
+    margin: 10px auto 0;
+    padding: 0.9rem 3rem;
+  }
+}
+
+/* ===== About profile picture (v4 treatment) ===== */
+.about__pic {
+  position: relative;
+  max-width: 300px;
+  margin: 0 auto 40px;
+}
+.about__pic-wrapper {
+  position: relative;
+  display: block;
+  border-radius: var(--border-radius);
+  background-color: var(--green);
+}
+.about__pic-wrapper::after {
+  content: '';
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  width: 100%;
+  height: 100%;
+  border: 2px solid var(--green);
+  border-radius: var(--border-radius);
+  z-index: -1;
+  transition: var(--transition);
+}
+.about__pic-wrapper img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: var(--border-radius);
+  filter: grayscale(100%) contrast(1);
+  mix-blend-mode: multiply;
+  transition: var(--transition);
+}
+.about__pic-wrapper:hover img,
+.about__pic-wrapper:focus-within img {
+  filter: none;
+  mix-blend-mode: normal;
+}
+.about__pic-wrapper:hover::after {
+  top: 10px;
+  left: 10px;
+}
+
+/* ===== Featured research cards (v4 overlap layout) ===== */
+.featured-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 40px;
+}
+.featured {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 90px;
+}
+.featured:last-of-type {
+  margin-bottom: 60px;
+}
+.featured__content {
+  position: relative;
+  grid-area: 1 / 1 / -1 / 8;
+  z-index: 2;
+}
+.featured:nth-of-type(even) .featured__content {
+  grid-area: 1 / 6 / -1 / -1;
+  text-align: right;
+}
+.featured__overline {
+  margin: 10px 0;
+  color: var(--green);
+  font-family: var(--font-mono);
+  font-size: var(--fz-xs);
+  font-weight: 400;
+}
+.featured__title {
+  margin-bottom: 20px;
+  color: var(--lightest-slate);
+  font-size: clamp(22px, 5vw, 26px);
+  text-shadow: 0 2px 12px var(--navy-shadow);
+}
+.featured__desc {
+  position: relative;
+  padding: 25px;
+  background-color: var(--light-navy);
+  border-radius: var(--border-radius);
+  box-shadow: 0 10px 30px -15px var(--navy-shadow);
+  color: var(--light-slate);
+  font-size: var(--fz-md);
+}
+.featured__desc p { margin: 0; }
+.featured__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 18px;
+  list-style: none;
+  padding: 0;
+  margin: 22px 0 0;
+  font-family: var(--font-mono);
+  font-size: var(--fz-xs);
+  color: var(--light-slate);
+}
+.featured:nth-of-type(even) .featured__tags {
+  justify-content: flex-end;
+}
+.featured__venue {
+  margin-top: 10px;
+  font-family: var(--font-mono);
+  font-size: var(--fz-xs);
+  color: var(--slate);
+}
+.featured__img {
+  grid-area: 1 / 6 / -1 / -1;
+  position: relative;
+  z-index: 1;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  background-color: var(--green);
+  box-shadow: 0 10px 30px -15px var(--navy-shadow);
+}
+.featured:nth-of-type(even) .featured__img {
+  grid-area: 1 / 1 / -1 / 8;
+}
+.featured__img img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(100%) contrast(1) brightness(85%);
+  mix-blend-mode: multiply;
+  transition: var(--transition);
+}
+.featured__img:hover img,
+.featured__img:focus-visible img {
+  filter: none;
+  mix-blend-mode: normal;
+}
+@media (max-width: 768px) {
+  .featured {
+    display: block;
+    margin-bottom: 50px;
+    padding: 30px 25px;
+    background-color: var(--light-navy);
+    border-radius: var(--border-radius);
+    box-shadow: 0 10px 30px -15px var(--navy-shadow);
+  }
+  .featured__img {
+    display: block;
+    margin-bottom: 25px;
+    background-color: transparent;
+    box-shadow: none;
+  }
+  .featured__img img {
+    filter: grayscale(20%);
+    mix-blend-mode: normal;
+  }
+  .featured:nth-of-type(even) .featured__content {
+    text-align: left;
+  }
+  .featured:nth-of-type(even) .featured__tags {
+    justify-content: flex-start;
+  }
+  .featured__desc {
+    padding: 0;
+    background-color: transparent;
+    box-shadow: none;
+  }
+}

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" role="img" aria-label="Profile placeholder">
+  <rect width="600" height="600" fill="#112240"/>
+  <circle cx="300" cy="235" r="92" fill="#233554"/>
+  <path d="M130 530c22-108 92-162 170-162s148 54 170 162z" fill="#233554"/>
+  <text x="300" y="330" text-anchor="middle" font-family="'Fira Code', monospace" font-size="118" font-weight="600" fill="#64ffda" opacity="0.85">JM</text>
+</svg>
