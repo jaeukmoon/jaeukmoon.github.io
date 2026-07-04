@@ -1318,3 +1318,52 @@ main {
     box-shadow: none;
   }
 }
+
+/* ===== Graduate industry-academic projects list ===== */
+.gradproj {
+  margin-top: 80px;
+}
+.gradproj__heading {
+  margin-bottom: 30px;
+  color: var(--lightest-slate);
+  font-size: clamp(20px, 4vw, 24px);
+}
+.gradproj__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.gp {
+  display: flex;
+  gap: 25px;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--lightest-navy);
+}
+.gp:last-child {
+  border-bottom: 0;
+}
+.gp__period {
+  flex-shrink: 0;
+  width: 90px;
+  color: var(--green);
+  font-family: var(--font-mono);
+  font-size: var(--fz-xs);
+  padding-top: 3px;
+}
+.gp__title {
+  color: var(--lightest-slate);
+  font-weight: 500;
+  font-size: var(--fz-md);
+  margin-bottom: 3px;
+}
+.gp__desc {
+  margin: 0;
+  color: var(--slate);
+  font-size: var(--fz-sm);
+}
+@media (max-width: 600px) {
+  .gp {
+    flex-direction: column;
+    gap: 4px;
+  }
+}
