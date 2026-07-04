@@ -700,6 +700,15 @@ main {
   margin-bottom: 4px;
   line-height: 1.4;
 }
+.pub__title a {
+  color: inherit;
+  text-decoration: none;
+  transition: var(--transition);
+}
+.pub__title a:hover,
+.pub__title a:focus-visible {
+  color: var(--green);
+}
 .pub__authors {
   font-size: var(--fz-sm);
   margin-bottom: 2px;
