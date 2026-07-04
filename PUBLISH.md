@@ -33,8 +33,13 @@ done
       실사진 받으면 `assets/profile.jpg`로 넣고 index.html의 src만 교체
 - [x] 공개용 sanitized resume PDF — `assets/resume.pdf` + 네비 Resume 버튼 (2026-07-05).
       원본 docx 헤더에 집주소·개인 이메일 있음 → 직접 변환 금지, Chrome headless로 클린 HTML에서 생성
-- [x] Research 대표 그림 — RESEAT 어텐션 히트맵·CTGAN PCA 분포·MARAPAS 예측 플롯 3종,
-      v4 오버랩 featured 카드 (`assets/research/`, 원본: RESEAT/MAML/CTGAN repo 실험 산출물)
+- [x] Research 대표 그림 4종 — RESEAT 히트맵·CTGAN PCA·MARAPAS 예측(repo 산출물) + CMC Fig.1
+      프레임워크(Tech Science OA, CC-BY). featured 카드 4개
+- [ ] **MAVAE 그림** — 원본 확인됨: OneDrive `내모든것/논문및 논문발표자료/부저자/노윤아/2022 이상치탐지,MAML sci/들어간 그림.pptx`.
+      단 OneDrive 미하이드레이션(0B placeholder)이라 추출 불가 → **Finder에서 해당 폴더 "항상 이 기기에 유지" 후 재요청**
+- [ ] **MIFlu 그림** — 이 머신에 원본 자체가 없음(전수 검색). 다른 기기의 Fig.1(2-LLM 구조도) 파일 또는 게재 PDF 필요
+- 참고: 논문 전문 아카이브 = knowledge-vault `papers/` (full 3: ctgan·cmc·applsci / abstract-only 5).
+      사이트 서지 검수는 여기 대조. MIFlu는 Crossref/PubMed 기준 게재 완료(JBHI vol.29 no.10, pp.7790–7801, 2025)
 - [x] 논문 DOI 링크 — 8편 전부 Crossref 검증 후 제목에 연결 (2026-07-05)
 - [x] 비공개 repo 3개(explainable-ILI-Forecasting, csat-eval, Slime-NeMo-gym) — **비공개 유지 확정**
       (사용자 결정 2026-07-05). 카드 링크 제거 상태 유지; 공개 전환 시에만 링크 복원
