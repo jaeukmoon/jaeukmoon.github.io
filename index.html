@@ -63,7 +63,7 @@
         </a>
       </li>
       <li>
-        <a href="mailto:pqsolutionax@gmail.com" aria-label="Email">
+        <a href="mailto:jaewookmo@gmail.com" aria-label="Email">
           <svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><title>Email</title><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
         </a>
       </li>
@@ -72,7 +72,7 @@
 
   <div class="side side--right">
     <div class="side__email">
-      <a href="mailto:pqsolutionax@gmail.com">pqsolutionax@gmail.com</a>
+      <a href="mailto:jaewookmo@gmail.com">jaewookmo@gmail.com</a>
     </div>
   </div>
 
@@ -137,7 +137,7 @@
         <aside class="about__edu" aria-label="Education">
           <div class="about__pic">
             <div class="about__pic-wrapper">
-              <img src="assets/profile-placeholder.svg" alt="Portrait of Jaeuk Moon" width="300" height="300">
+              <img src="assets/profile.jpg" alt="Portrait of Jaeuk Moon" width="354" height="472">
             </div>
           </div>
           <h3 class="about__edu-title">Education</h3>
@@ -229,7 +229,7 @@
             <p class="featured__venue"><a class="inline-link" href="https://doi.org/10.1109/JBHI.2023.3247687" target="_blank" rel="noreferrer noopener">IEEE Journal of Biomedical and Health Informatics, 2023</a></p>
           </div>
           <a class="featured__img" href="https://doi.org/10.1109/JBHI.2023.3247687" target="_blank" rel="noreferrer noopener" aria-label="RESEAT: Multi-Regional Time-Series Forecasting — paper">
-            <img src="assets/research/reseat-attention.png" alt="RESEAT self-attention heatmap of inter-regional influenza relationships across Japanese prefectures" loading="lazy">
+            <img src="assets/research/reseat-architecture.png" alt="Overall architecture of RESEAT: input time series is projected to query, key and value; temporal self-attention produces per-step inter-regional attention maps that are recurrently connected by message passing, and the aggregated attention drives the multi-regional forecasting output" loading="lazy">
           </a>
         </li>
 
@@ -244,7 +244,7 @@
             <p class="featured__venue"><a class="inline-link" href="https://doi.org/10.1109/ACCESS.2020.3037063" target="_blank" rel="noreferrer noopener">IEEE Access, 2020</a></p>
           </div>
           <a class="featured__img" href="https://doi.org/10.1109/ACCESS.2020.3037063" target="_blank" rel="noreferrer noopener" aria-label="GAN-Based Data Augmentation for Load Forecasting — paper">
-            <img src="assets/research/ctgan-distribution.png" alt="Principal-component distribution of CTGAN-generated electric load data" loading="lazy">
+            <img src="assets/research/ctgan-architecture.png" alt="Overall architecture of the proposed CTGAN-based two-stage data generation scheme: CTGAN and a regression model synthesize artificial input and output variables from real data, which are mixed with the real data to train the short-term load-forecasting model" loading="lazy">
           </a>
         </li>
 
@@ -259,7 +259,7 @@
             <p class="featured__venue"><a class="inline-link" href="https://doi.org/10.1016/j.jksuci.2022.11.009" target="_blank" rel="noreferrer noopener">Journal of King Saud University – Computer and Information Sciences, 2023</a></p>
           </div>
           <a class="featured__img" href="https://doi.org/10.1016/j.jksuci.2022.11.009" target="_blank" rel="noreferrer noopener" aria-label="Meta-Learning (MAML) for Data-Scarce Prediction — paper">
-            <img src="assets/research/marapas-forecast.png" alt="MARAPAS influenza forecasts versus DNN and MAML baselines on Japanese prefecture data" loading="lazy">
+            <img src="assets/research/marapas-architecture.png" alt="Overall architecture of the region-adaptive meta-learning forecasting framework: a forecasting model is meta-learned across influenza tasks from multiple regions, then adapted with few samples to a target region" loading="lazy">
           </a>
         </li>
         <li class="featured reveal">
@@ -297,6 +297,14 @@
       <div class="publications reveal">
         <h3 class="publications__heading">First-Author Publications</h3>
         <ol class="publications__list" reversed>
+          <li class="pub">
+            <span class="pub__year">2026</span>
+            <div class="pub__body">
+              <p class="pub__title">SILEIF: Self-Instructed LLM-based Explainable Influenza Forecasting <span class="pub__status">Under Review</span></p>
+              <p class="pub__authors"><strong>J. Moon</strong>, et al.</p>
+              <p class="pub__venue">IEEE International Conference on Bioinformatics and Biomedicine (BIBM), 2026</p>
+            </div>
+          </li>
           <li class="pub">
             <span class="pub__year">2025</span>
             <div class="pub__body">
@@ -363,6 +371,71 @@
           </li>
         </ol>
         <p class="publications__note">10+ co-authored international journal publications, including IEEE JBHI, Journal of Computational Science, Ecological Informatics, Expert Systems with Applications, and Journal of Building Engineering.</p>
+      </div>
+
+      <!-- ===== Patents (scaffold) =====
+           Hidden until the full list is finalized. To PUBLISH: remove the `hidden` attribute below.
+           The entries are pre-drafted from the CV as a starting point — VERIFY every title / inventor / number / date before publishing, and add the remaining patents to reach the full set. Duplicate one <li class="pub"> block per patent. -->
+      <div class="publications patents reveal" hidden>
+        <h3 class="publications__heading">Patents</h3>
+        <ol class="publications__list" reversed>
+          <li class="pub">
+            <span class="pub__year">2026</span>
+            <div class="pub__body">
+              <p class="pub__title">Apparatus and Method for Forecasting Electricity Usage to Improve Power-Demand Forecasting Accuracy</p>
+              <p class="pub__authors">E. Hwang, <strong>J. Moon</strong>, S. Jung, S. Park</p>
+              <p class="pub__venue">Republic of Korea Patent, Reg. No. 10-2935894</p>
+            </div>
+          </li>
+          <li class="pub">
+            <span class="pub__year">2026</span>
+            <div class="pub__body">
+              <p class="pub__title">Apparatus and Method for Influenza Forecasting via Regional Similarity</p>
+              <p class="pub__authors">E. Hwang, W. Jung, <strong>J. Moon</strong>, Y. Noh</p>
+              <p class="pub__venue">Republic of Korea Patent, No. 10-2022-0079373</p>
+            </div>
+          </li>
+          <li class="pub">
+            <span class="pub__year">2025</span>
+            <div class="pub__body">
+              <p class="pub__title">Apparatus and Method for Photovoltaic Power Forecasting Reflecting Time Variables Suited to Solar Periodicity</p>
+              <p class="pub__authors">E. Hwang, W. Jung, S. Park, <strong>J. Moon</strong></p>
+              <p class="pub__venue">Republic of Korea Patent, Reg. No. 10-2766748</p>
+            </div>
+          </li>
+          <li class="pub">
+            <span class="pub__year">2025</span>
+            <div class="pub__body">
+              <p class="pub__title">Self-Attention-Based Apparatus and Method for Regional Infectious-Disease Forecasting</p>
+              <p class="pub__authors">E. Hwang, <strong>J. Moon</strong>, S. Jung</p>
+              <p class="pub__venue">Republic of Korea Patent, Reg. No. 10-2766763</p>
+            </div>
+          </li>
+          <li class="pub">
+            <span class="pub__year">2024</span>
+            <div class="pub__body">
+              <p class="pub__title">Photovoltaic Power Generation Forecasting Using a Clustering-Based Oversampling Technique</p>
+              <p class="pub__authors">E. Hwang, S. Park, W. Jung, <strong>J. Moon</strong></p>
+              <p class="pub__venue">Republic of Korea Patent, Reg. No. 10-2664016</p>
+            </div>
+          </li>
+          <li class="pub">
+            <span class="pub__year">2022</span>
+            <div class="pub__body">
+              <p class="pub__title">Apparatus for Analyzing Infectious-Disease Occurrence Patterns</p>
+              <p class="pub__authors">E. Hwang, S. Jung, <strong>J. Moon</strong></p>
+              <p class="pub__venue">Republic of Korea Patent, Reg. No. 10-2476875</p>
+            </div>
+          </li>
+          <li class="pub">
+            <span class="pub__year">2022</span>
+            <div class="pub__body">
+              <p class="pub__title">Zero-Shot Photovoltaic Efficiency Forecasting for Regions Lacking PV Data</p>
+              <p class="pub__authors">E. Hwang, D. Kim, S. Park, <strong>J. Moon</strong></p>
+              <p class="pub__venue">Republic of Korea Patent, App. No. 10-2022-0080801</p>
+            </div>
+          </li>
+        </ol>
       </div>
     </section>
 
@@ -567,7 +640,7 @@
         My inbox is always open — whether it is a question about my research,
         a collaboration idea, or an opportunity, I will do my best to get back to you.
       </p>
-      <a class="btn btn--big" href="mailto:pqsolutionax@gmail.com">Say Hello</a>
+      <a class="btn btn--big" href="mailto:jaewookmo@gmail.com">Say Hello</a>
     </section>
   </main>
 
@@ -576,7 +649,7 @@
       <a href="https://github.com/jaeukmoon" target="_blank" rel="noreferrer noopener" aria-label="GitHub">
         <svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><title>GitHub</title><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
       </a>
-      <a href="mailto:pqsolutionax@gmail.com" aria-label="Email">
+      <a href="mailto:jaewookmo@gmail.com" aria-label="Email">
         <svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><title>Email</title><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
       </a>
     </div>

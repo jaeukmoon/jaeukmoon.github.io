@@ -722,6 +722,19 @@ main {
   font-family: var(--font-mono);
   font-size: var(--fz-xs);
 }
+.pub__status {
+  display: inline-block;
+  margin-left: 8px;
+  padding: 1px 8px;
+  border: 1px solid var(--green);
+  border-radius: 4px;
+  color: var(--green);
+  font-family: var(--font-mono);
+  font-size: var(--fz-xxs, 12px);
+  font-weight: 500;
+  vertical-align: middle;
+  white-space: nowrap;
+}
 .publications__note {
   color: var(--slate);
   font-size: var(--fz-sm);
