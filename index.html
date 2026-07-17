@@ -163,67 +163,83 @@
         </ul>
       </div>
 
-      <ul class="papers">
-        <li class="paper">
-          <a class="paper__thumb" href="https://doi.org/10.1109/JBHI.2023.3247687" target="_blank" rel="noreferrer noopener" aria-label="RESEAT paper">
-            <img src="assets/research/reseat-architecture.png" alt="Overall architecture of RESEAT: input time series is projected to query, key and value; temporal self-attention produces per-step inter-regional attention maps that are recurrently connected by message passing, and the aggregated attention drives the multi-regional forecasting output" loading="lazy">
-          </a>
-          <div class="paper__body">
-            <h3 class="paper__title"><a href="https://doi.org/10.1109/JBHI.2023.3247687" target="_blank" rel="noreferrer noopener">RESEAT: Multi-Regional Time-Series Forecasting</a></h3>
-            <p class="paper__desc">Recurrent self-attention network where LSTMs learn per-region temporal patterns and recurrently connected attention weights model dynamically changing inter-regional relationships, outperforming SOTA on influenza/COVID-19 forecasting while visualizing region correlations.</p>
-            <p class="paper__venue">IEEE Journal of Biomedical and Health Informatics, 2023</p>
-            <ul class="tags"><li>Self-Attention</li><li>LSTM</li><li>Multivariate Time Series</li><li>Interpretability</li></ul>
-          </div>
-        </li>
+      <div class="paper-group">
+        <p class="paper-group__label">Epidemic &amp; Health Time-Series Forecasting</p>
+        <p class="paper-group__note">Multimodal and interpretable models for influenza / COVID-19 surveillance data.</p>
+        <ul class="papers">
+          <li class="paper">
+            <a class="paper__thumb" href="https://doi.org/10.1109/JBHI.2023.3247687" target="_blank" rel="noreferrer noopener" aria-label="RESEAT paper">
+              <img src="assets/research/reseat-architecture.png" alt="Overall architecture of RESEAT: input time series is projected to query, key and value; temporal self-attention produces per-step inter-regional attention maps that are recurrently connected by message passing, and the aggregated attention drives the multi-regional forecasting output" loading="lazy">
+            </a>
+            <div class="paper__body">
+              <h3 class="paper__title"><a href="https://doi.org/10.1109/JBHI.2023.3247687" target="_blank" rel="noreferrer noopener">RESEAT: Multi-Regional Time-Series Forecasting</a></h3>
+              <p class="paper__desc">Recurrent self-attention network where LSTMs learn per-region temporal patterns and recurrently connected attention weights model dynamically changing inter-regional relationships, outperforming SOTA on influenza/COVID-19 forecasting while visualizing region correlations.</p>
+              <p class="paper__venue">IEEE Journal of Biomedical and Health Informatics, 2023</p>
+              <ul class="tags"><li>Self-Attention</li><li>LSTM</li><li>Multivariate Time Series</li><li>Interpretability</li></ul>
+            </div>
+          </li>
 
-        <li class="paper">
-          <a class="paper__thumb" href="https://doi.org/10.1109/ACCESS.2020.3037063" target="_blank" rel="noreferrer noopener" aria-label="CTGAN paper">
-            <img src="assets/research/ctgan-architecture.png" alt="Overall architecture of the proposed CTGAN-based two-stage data generation scheme: CTGAN and a regression model synthesize artificial input and output variables from real data, which are mixed with the real data to train the short-term load-forecasting model" loading="lazy">
-          </a>
-          <div class="paper__body">
-            <h3 class="paper__title"><a href="https://doi.org/10.1109/ACCESS.2020.3037063" target="_blank" rel="noreferrer noopener">GAN-Based Data Augmentation for Load Forecasting</a></h3>
-            <p class="paper__desc">A two-stage generation scheme — CTGAN synthesizes virtual input variables, then a regression model trained on real data produces the corresponding outputs — that consistently boosts short-term electric load forecasting accuracy in data-scarce settings.</p>
-            <p class="paper__venue">IEEE Access, 2020</p>
-            <ul class="tags"><li>CTGAN</li><li>Data Augmentation</li><li>Load Forecasting</li></ul>
-          </div>
-        </li>
+          <li class="paper">
+            <a class="paper__thumb" href="https://doi.org/10.32604/cmc.2021.017435" target="_blank" rel="noreferrer noopener" aria-label="Data selection paper">
+              <img src="assets/research/cmc-selection.png" alt="Two-stage machine-learning data selection framework: multi-country surveillance data is preprocessed, ranked and filtered by forecasting accuracy, then the selected subset feeds the forecasting model" loading="lazy">
+            </a>
+            <div class="paper__body">
+              <h3 class="paper__title"><a href="https://doi.org/10.32604/cmc.2021.017435" target="_blank" rel="noreferrer noopener">Two-Stage Data Selection for Long-Term Influenza Forecasting</a></h3>
+              <p class="paper__desc">Automatically selects which other countries’ surveillance data (168 countries, WHO FluNet) help long-term (26-week) influenza prediction, reducing RMSE by up to ~47% versus conventional inputs across 6 ML models and 3 target countries.</p>
+              <p class="paper__venue">Computers, Materials &amp; Continua, 2021</p>
+              <ul class="tags"><li>Feature Selection</li><li>Long-Term Forecasting</li><li>Machine Learning</li></ul>
+            </div>
+          </li>
+        </ul>
+      </div>
 
-        <li class="paper">
-          <a class="paper__thumb" href="https://doi.org/10.1016/j.jksuci.2022.11.009" target="_blank" rel="noreferrer noopener" aria-label="Meta-learning paper">
-            <img src="assets/research/marapas-architecture.png" alt="Overall architecture of the region-adaptive meta-learning forecasting framework: a forecasting model is meta-learned across influenza tasks from multiple regions, then adapted with few samples to a target region" loading="lazy">
-          </a>
-          <div class="paper__body">
-            <h3 class="paper__title"><a href="https://doi.org/10.1016/j.jksuci.2022.11.009" target="_blank" rel="noreferrer noopener">Meta-Learning (MAML) for Data-Scarce Prediction</a></h3>
-            <p class="paper__desc">Region-adaptive MAML initialization for influenza forecasting (MARAPAS), and TAPT — a task-adaptive parameter transformation that improves few-shot animal sound classification accuracy by up to 20.32% over ProtoNet on public benchmarks.</p>
-            <p class="paper__venue">Journal of King Saud University – Computer and Information Sciences, 2023</p>
-            <ul class="tags"><li>MAML</li><li>Few-Shot Learning</li><li>Meta-Learning</li><li>Bioacoustics</li></ul>
-          </div>
-        </li>
+      <div class="paper-group">
+        <p class="paper-group__label">Meta-Learning for Data-Scarce Prediction</p>
+        <p class="paper-group__note">Few-shot adaptation when target data is limited — forecasting and anomaly detection.</p>
+        <ul class="papers">
+          <li class="paper">
+            <a class="paper__thumb" href="https://doi.org/10.1016/j.jksuci.2022.11.009" target="_blank" rel="noreferrer noopener" aria-label="Meta-learning paper">
+              <img src="assets/research/marapas-architecture.png" alt="Overall architecture of the region-adaptive meta-learning forecasting framework: a forecasting model is meta-learned across influenza tasks from multiple regions, then adapted with few samples to a target region" loading="lazy">
+            </a>
+            <div class="paper__body">
+              <h3 class="paper__title"><a href="https://doi.org/10.1016/j.jksuci.2022.11.009" target="_blank" rel="noreferrer noopener">MARAPAS: Region-Adaptive Meta-Learning</a></h3>
+              <p class="paper__desc">Region-adaptive MAML initialization for influenza forecasting (MARAPAS), and TAPT — a task-adaptive parameter transformation that improves few-shot animal sound classification accuracy by up to 20.32% over ProtoNet on public benchmarks.</p>
+              <p class="paper__venue">Journal of King Saud University – Computer and Information Sciences, 2023</p>
+              <ul class="tags"><li>MAML</li><li>Few-Shot Learning</li><li>Meta-Learning</li><li>Bioacoustics</li></ul>
+            </div>
+          </li>
 
-        <li class="paper">
-          <a class="paper__thumb" href="https://doi.org/10.32604/cmc.2021.017435" target="_blank" rel="noreferrer noopener" aria-label="Data selection paper">
-            <img src="assets/research/cmc-selection.png" alt="Two-stage machine-learning data selection framework: multi-country surveillance data is preprocessed, ranked and filtered by forecasting accuracy, then the selected subset feeds the forecasting model" loading="lazy">
-          </a>
-          <div class="paper__body">
-            <h3 class="paper__title"><a href="https://doi.org/10.32604/cmc.2021.017435" target="_blank" rel="noreferrer noopener">Two-Stage Data Selection for Long-Term Influenza Forecasting</a></h3>
-            <p class="paper__desc">Automatically selects which other countries’ surveillance data (168 countries, WHO FluNet) help long-term (26-week) influenza prediction, reducing RMSE by up to ~47% versus conventional inputs across 6 ML models and 3 target countries.</p>
-            <p class="paper__venue">Computers, Materials &amp; Continua, 2021</p>
-            <ul class="tags"><li>Feature Selection</li><li>Long-Term Forecasting</li><li>Machine Learning</li></ul>
-          </div>
-        </li>
+          <li class="paper">
+            <a class="paper__thumb" href="https://doi.org/10.1016/j.jobe.2023.106099" target="_blank" rel="noreferrer noopener" aria-label="MAVAE paper">
+              <img src="assets/research/mavae.png" alt="MAVAE framework: a VAE is meta-learned on normal data from multiple anomaly-detection tasks, then adapted to a target facility with few normal samples to detect anomalies" loading="lazy">
+            </a>
+            <div class="paper__body">
+              <h3 class="paper__title"><a href="https://doi.org/10.1016/j.jobe.2023.106099" target="_blank" rel="noreferrer noopener">MAVAE: Meta-Learned VAE for Anomaly Detection</a></h3>
+              <p class="paper__desc">Unsupervised anomaly detection for facility management that meta-learns shared knowledge from normal data across facilities, adapting to new facilities with few samples — ~45% average improvement over SOTA (F1/AUC) on the SKAB benchmark.</p>
+              <p class="paper__venue">Journal of Building Engineering, 2023</p>
+              <ul class="tags"><li>VAE</li><li>MAML</li><li>Anomaly Detection</li><li>Sensor Time Series</li></ul>
+            </div>
+          </li>
+        </ul>
+      </div>
 
-        <li class="paper">
-          <a class="paper__thumb" href="https://doi.org/10.1016/j.jobe.2023.106099" target="_blank" rel="noreferrer noopener" aria-label="MAVAE paper">
-            <img src="assets/research/mavae.png" alt="MAVAE framework: a VAE is meta-learned on normal data from multiple anomaly-detection tasks, then adapted to a target facility with few normal samples to detect anomalies" loading="lazy">
-          </a>
-          <div class="paper__body">
-            <h3 class="paper__title"><a href="https://doi.org/10.1016/j.jobe.2023.106099" target="_blank" rel="noreferrer noopener">MAVAE: Meta-Learned VAE for Anomaly Detection</a></h3>
-            <p class="paper__desc">Unsupervised anomaly detection for facility management that meta-learns shared knowledge from normal data across facilities, adapting to new facilities with few samples — ~45% average improvement over SOTA (F1/AUC) on the SKAB benchmark.</p>
-            <p class="paper__venue">Journal of Building Engineering, 2023</p>
-            <ul class="tags"><li>VAE</li><li>MAML</li><li>Anomaly Detection</li><li>Sensor Time Series</li></ul>
-          </div>
-        </li>
-      </ul>
+      <div class="paper-group">
+        <p class="paper-group__label">Generative Modeling &amp; Data Augmentation</p>
+        <p class="paper-group__note">Synthesizing data to train forecasters where records are scarce.</p>
+        <ul class="papers">
+          <li class="paper">
+            <a class="paper__thumb" href="https://doi.org/10.1109/ACCESS.2020.3037063" target="_blank" rel="noreferrer noopener" aria-label="CTGAN paper">
+              <img src="assets/research/ctgan-architecture.png" alt="Overall architecture of the proposed CTGAN-based two-stage data generation scheme: CTGAN and a regression model synthesize artificial input and output variables from real data, which are mixed with the real data to train the short-term load-forecasting model" loading="lazy">
+            </a>
+            <div class="paper__body">
+              <h3 class="paper__title"><a href="https://doi.org/10.1109/ACCESS.2020.3037063" target="_blank" rel="noreferrer noopener">GAN-Based Data Augmentation for Load Forecasting</a></h3>
+              <p class="paper__desc">A two-stage generation scheme — CTGAN synthesizes virtual input variables, then a regression model trained on real data produces the corresponding outputs — that consistently boosts short-term electric load forecasting accuracy in data-scarce settings.</p>
+              <p class="paper__venue">IEEE Access, 2020</p>
+              <ul class="tags"><li>CTGAN</li><li>Data Augmentation</li><li>Load Forecasting</li></ul>
+            </div>
+          </li>
+        </ul>
+      </div>
 
       <!-- Publications list -->
       <div class="publications">
