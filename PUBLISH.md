@@ -45,5 +45,8 @@ done
 - [x] 논문 DOI 링크 — 8편 전부 Crossref 검증 후 제목에 연결 (2026-07-05)
 - [x] 비공개 repo 3개(explainable-ILI-Forecasting, csat-eval, Slime-NeMo-gym) — **비공개 유지 확정**
       (사용자 결정 2026-07-05). 카드 링크 제거 상태 유지; 공개 전환 시에만 링크 복원
-- [ ] 박사논문 공식 제목 확인: resume("LLM-Based Explainable Forecasting Scheme Using Multi-Modality")
-      vs CV/portfolio("Infectious Diseases Occurrence Forecasting Scheme based on LLM") 불일치
+- [x] 박사논문 공식 제목 — **"An AI-based Influenza-like Illness Occurrence Forecasting Scheme based on LLM"**
+      으로 통일 (사용자 확정 2026-07-17; resume 원본 docx + 사이트 Education 반영)
+- [ ] 삼성 재직 프로젝트 카드 5종(csat-eval · slime+NeMo Gym · Health LLM Eval Harness ·
+      Korean Term Extraction · On-Prem LLM Routing) — 2026-07-17 사이트에서 **일괄 제거**(사용자 지시:
+      상세 노출 위험). 재게재는 항목별 사용자 승인 + 간략화 버전으로만
