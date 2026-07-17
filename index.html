@@ -19,7 +19,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="css/style.css" />
 </head>
@@ -28,77 +28,33 @@
 
   <!-- ===== Header / Nav ===== -->
   <header class="nav" id="nav">
-    <nav aria-label="Primary">
-      <a class="nav__logo" href="#top" aria-label="Home">
-        <svg width="42" height="42" viewBox="0 0 84 96" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true">
-          <polygon points="42,4 80,26 80,70 42,92 4,70 4,26" stroke="#64ffda" stroke-width="5" fill="none"/>
-          <text x="42" y="61" text-anchor="middle" font-family="'Fira Code', monospace" font-size="34" fill="#64ffda">J</text>
-        </svg>
-      </a>
-
-      <button class="nav__hamburger" id="hamburger" aria-label="Menu" aria-expanded="false" aria-controls="mobile-menu">
-        <span class="ham-box"><span class="ham-inner"></span></span>
+    <div class="nav__inner">
+      <a class="nav__name" href="#top">Jaeuk Moon</a>
+      <button class="nav__hamburger" id="hamburger" aria-label="Menu" aria-expanded="false" aria-controls="nav-menu">
+        <span></span><span></span><span></span>
       </button>
-
-      <div class="nav__links" id="mobile-menu">
-        <ol>
-          <li><a href="#about"><span>01.</span> About</a></li>
-          <li><a href="#experience"><span>02.</span> Experience</a></li>
-          <li><a href="#research"><span>03.</span> Research</a></li>
-          <li><a href="#projects"><span>04.</span> Projects</a></li>
-          <li><a href="#contact"><span>05.</span> Contact</a></li>
-        </ol>
-        <a class="btn nav__resume" href="assets/resume.pdf" target="_blank" rel="noreferrer noopener">Resume</a>
-      </div>
-    </nav>
-  </header>
-  <div class="mobile-backdrop" id="mobile-backdrop" tabindex="-1" aria-hidden="true"></div>
-
-  <!-- ===== Fixed side elements ===== -->
-  <div class="side side--left" aria-label="Social links">
-    <ul>
-      <li>
-        <a href="https://github.com/jaeukmoon" target="_blank" rel="noreferrer noopener" aria-label="GitHub">
-          <svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><title>GitHub</title><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
-        </a>
-      </li>
-      <li>
-        <a href="mailto:jaewookmo@gmail.com" aria-label="Email">
-          <svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><title>Email</title><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
-        </a>
-      </li>
-    </ul>
-  </div>
-
-  <div class="side side--right">
-    <div class="side__email">
-      <a href="mailto:jaewookmo@gmail.com">jaewookmo@gmail.com</a>
+      <nav aria-label="Primary">
+        <ul class="nav__links" id="nav-menu">
+          <li><a href="#about">about</a></li>
+          <li><a href="#experience">experience</a></li>
+          <li><a href="#research">research</a></li>
+          <li><a href="#projects">projects</a></li>
+          <li><a class="nav__resume" href="assets/resume.pdf" target="_blank" rel="noreferrer noopener">resume</a></li>
+        </ul>
+      </nav>
     </div>
-  </div>
+  </header>
 
   <!-- ===== Main ===== -->
   <main id="content">
 
-    <!-- Hero -->
-    <section class="hero" id="top">
-      <p class="hero__overline fadeup" style="--delay: 1">Hi, my name is</p>
-      <h1 class="big-heading fadeup" style="--delay: 2">Jaeuk Moon.</h1>
-      <h2 class="big-heading hero__tagline fadeup" style="--delay: 3">I make forecasting models accurate and explainable.</h2>
-      <p class="hero__desc fadeup" style="--delay: 4">
-        Staff Engineer at Samsung Research — LLM post-training, time-series forecasting,
-        and world models. Ph.D. in ECE from Korea University with 8 first-author SCIE
-        publications on machine learning for forecasting.
-      </p>
-      <div class="hero__cta fadeup" style="--delay: 5">
-        <a class="btn btn--big" href="#research">Check out my research!</a>
-      </div>
-    </section>
+    <!-- About / intro -->
+    <section id="about" class="section section--intro" aria-label="Introduction">
+      <h1 class="intro__name">Jaeuk <b>Moon</b></h1>
+      <p class="intro__tagline">Staff Engineer @ Samsung Research &middot; Ph.D. in ECE, Korea University</p>
 
-    <!-- 01. About -->
-    <section id="about" class="section reveal">
-      <h2 class="numbered-heading"><span>01.</span> About Me</h2>
-      <div class="about__grid">
-        <div class="about__text">
+      <div class="intro__grid">
+        <div class="intro__text">
           <p>
             I am a Staff Engineer at Samsung Research, working on LLM post-training (SFT/RLHF),
             on-device health LLMs, and vision-language-action &amp; world models for robotics.
@@ -109,9 +65,9 @@
             predictive models both accurate and explainable, especially under data-scarce,
             real-world conditions.
           </p>
-          <p>Here are a few technologies I have been working with recently:</p>
-          <div class="about__skills">
-            <ul class="fancy-list">
+          <p class="intro__skills-lead">Here are a few technologies I have been working with recently:</p>
+          <div class="intro__skills">
+            <ul class="tick-list">
               <li>LLM Post-Training (SFT, RLHF)</li>
               <li>LoRA / PEFT</li>
               <li>Time-Series Forecasting</li>
@@ -121,7 +77,7 @@
               <li>RAG &amp; LLM Agents</li>
               <li>LLM Evaluation (LLM-as-a-Judge)</li>
             </ul>
-            <ul class="fancy-list">
+            <ul class="tick-list">
               <li>Python</li>
               <li>PyTorch</li>
               <li>TensorFlow</li>
@@ -134,13 +90,10 @@
             </ul>
           </div>
         </div>
-        <aside class="about__edu" aria-label="Education">
-          <div class="about__pic">
-            <div class="about__pic-wrapper">
-              <img src="assets/profile.jpg" alt="Portrait of Jaeuk Moon" width="354" height="472">
-            </div>
-          </div>
-          <h3 class="about__edu-title">Education</h3>
+
+        <aside class="intro__aside" aria-label="Profile and education">
+          <img class="intro__photo" src="assets/profile.jpg" alt="Portrait of Jaeuk Moon" width="354" height="472">
+          <h2 class="aside__heading">Education</h2>
           <div class="edu-item">
             <p class="edu-item__degree">Ph.D. in Electrical and Computer Engineering</p>
             <p class="edu-item__school">Korea University</p>
@@ -152,151 +105,130 @@
             <p class="edu-item__school">Korea University</p>
             <p class="edu-item__period">Mar 2015 – Feb 2019</p>
           </div>
-          <div class="edu-item">
-            <h3 class="about__edu-title">Languages</h3>
-            <ul class="fancy-list">
-              <li>Korean (native)</li>
-              <li>English (fluent, OPIc AL)</li>
-            </ul>
+          <h2 class="aside__heading">Languages</h2>
+          <ul class="tick-list">
+            <li>Korean (native)</li>
+            <li>English (fluent, OPIc AL)</li>
+          </ul>
+          <div class="intro__contacts">
+            <a href="mailto:jaewookmo@gmail.com">jaewookmo@gmail.com</a>
+            <a href="https://github.com/jaeukmoon" target="_blank" rel="noreferrer noopener">github.com/jaeukmoon</a>
           </div>
         </aside>
       </div>
     </section>
 
-    <!-- 02. Experience -->
-    <section id="experience" class="section section--narrow reveal">
-      <h2 class="numbered-heading"><span>02.</span> Where I’ve Worked</h2>
-      <div class="jobs">
-        <div class="jobs__tablist" role="tablist" aria-label="Job tabs">
-          <button class="jobs__tab" id="tab-0" role="tab" aria-selected="true" aria-controls="panel-0" tabindex="0">Samsung Research</button>
-          <button class="jobs__tab" id="tab-1" role="tab" aria-selected="false" aria-controls="panel-1" tabindex="-1">Korea Univ. (MILAB)</button>
-          <span class="jobs__highlight" aria-hidden="true"></span>
-        </div>
+    <!-- Experience -->
+    <section id="experience" class="section">
+      <h2 class="section__heading">Experience</h2>
 
-        <div class="jobs__panels">
-          <div class="jobs__panel" id="panel-0" role="tabpanel" aria-labelledby="tab-0" tabindex="0">
-            <h3 class="jobs__title">Staff Engineer, AI Model Team <span class="jobs__company">@ <a href="https://research.samsung.com" target="_blank" rel="noreferrer noopener" class="inline-link">Samsung Research</a></span></h3>
-            <p class="jobs__period">Sep 2025 – Present</p>
-            <ul class="fancy-list">
-              <li>Conduct LLM post-training research — supervised fine-tuning (SFT) and reinforcement learning from human feedback (RLHF) — to improve alignment and deployability of Samsung Gauss, Samsung’s internal LLM.</li>
-              <li>Develop an on-device LLM for wearable health monitoring, applying time-series forecasting and self-supervised learning to extract health signals from noisy wearable sensor data.</li>
-              <li>Research vision-language-action (VLA) models and world models for robotics, coupling action-conditioned future prediction with policy learning to ground robot actions in physical dynamics.</li>
-              <li>Lead independent research on LLM-based influenza-like illness (ILI) forecasting, integrating multimodal inputs (numerical time series + textual surveillance reports) with self-instructed fine-tuning for explainable predictions; submitted to IEEE BIBM 2026.</li>
-            </ul>
-          </div>
-
-          <div class="jobs__panel" id="panel-1" role="tabpanel" aria-labelledby="tab-1" tabindex="0" hidden>
-            <h3 class="jobs__title">Ph.D. Researcher &amp; Lab Manager <span class="jobs__company">@ <a href="https://korea.ac.kr" target="_blank" rel="noreferrer noopener" class="inline-link">Korea University — MILAB</a></span></h3>
-            <p class="jobs__period">Mar 2019 – Aug 2025</p>
-            <ul class="fancy-list">
-              <li>Led high-impact research contributing to 18 international journal publications (8 first-author SCIE, the highest in the lab), 11 patent filings, and multiple conference papers.</li>
-              <li>Achieved 200% of the project’s publication target (6 papers published vs. 3 required) in COVID-19 forecasting research with KISTI and the Korea Disease Control and Prevention Agency.</li>
-              <li>Designed and deployed custom LLM solutions (fine-tuning, RAG, hallucination self-evaluation) for industrial partners, and spearheaded a hierarchical multi-AI-agent system for B2B services such as Incheon International Airport.</li>
-              <li>As Lab Manager, streamlined research workflows and mentored junior researchers, guiding them to 15 awards and 10 SCIE-indexed publications.</li>
-            </ul>
-          </div>
+      <article class="job">
+        <div class="job__head">
+          <h3 class="job__title">Staff Engineer, AI Model Team <span class="job__company">@ <a href="https://research.samsung.com" target="_blank" rel="noreferrer noopener">Samsung Research</a></span></h3>
+          <p class="job__period">Sep 2025 – Present</p>
         </div>
-      </div>
+        <ul class="tick-list tick-list--roomy">
+          <li>Conduct LLM post-training research — supervised fine-tuning (SFT) and reinforcement learning from human feedback (RLHF) — to improve alignment and deployability of Samsung Gauss, Samsung’s internal LLM.</li>
+          <li>Develop an on-device LLM for wearable health monitoring, applying time-series forecasting and self-supervised learning to extract health signals from noisy wearable sensor data.</li>
+          <li>Research vision-language-action (VLA) models and world models for robotics, coupling action-conditioned future prediction with policy learning to ground robot actions in physical dynamics.</li>
+          <li>Lead independent research on LLM-based influenza-like illness (ILI) forecasting, integrating multimodal inputs (numerical time series + textual surveillance reports) with self-instructed fine-tuning for explainable predictions; submitted to IEEE BIBM 2026.</li>
+        </ul>
+      </article>
+
+      <article class="job">
+        <div class="job__head">
+          <h3 class="job__title">Ph.D. Researcher &amp; Lab Manager <span class="job__company">@ <a href="https://korea.ac.kr" target="_blank" rel="noreferrer noopener">Korea University — MILAB</a></span></h3>
+          <p class="job__period">Mar 2019 – Aug 2025</p>
+        </div>
+        <ul class="tick-list tick-list--roomy">
+          <li>Led high-impact research contributing to 18 international journal publications (8 first-author SCIE, the highest in the lab), 11 patent filings, and multiple conference papers.</li>
+          <li>Achieved 200% of the project’s publication target (6 papers published vs. 3 required) in COVID-19 forecasting research with KISTI and the Korea Disease Control and Prevention Agency.</li>
+          <li>Designed and deployed custom LLM solutions (fine-tuning, RAG, hallucination self-evaluation) for industrial partners, and spearheaded a hierarchical multi-AI-agent system for B2B services such as Incheon International Airport.</li>
+          <li>As Lab Manager, streamlined research workflows and mentored junior researchers, guiding them to 15 awards and 10 SCIE-indexed publications.</li>
+        </ul>
+      </article>
     </section>
 
-    <!-- 03. Research & Publications -->
-    <section id="research" class="section reveal">
-      <h2 class="numbered-heading"><span>03.</span> Research &amp; Publications</h2>
+    <!-- Research & Publications -->
+    <section id="research" class="section">
+      <h2 class="section__heading">Research &amp; Publications</h2>
 
-      <ul class="research-list">
-        <li class="research-card reveal">
-          <p class="research-card__overline">Featured Research · Dissertation Topic</p>
-          <h3 class="research-card__title">LLM-Based Multimodal &amp; Explainable Epidemic Forecasting</h3>
-          <div class="research-card__desc">
-            <p>A dual-LLM architecture that fuses numerical time series with expert prior knowledge and surveillance reports given as text, fine-tuned with LoRA — up to 26% improvement over state-of-the-art forecasters and effective under data scarcity.</p>
-          </div>
-          <p class="research-card__venue">IEEE Journal of Biomedical and Health Informatics, 2025 (MIFlu)</p>
-          <ul class="research-card__tags">
-            <li>LLM</li><li>Multimodal</li><li>LoRA/PEFT</li><li>Prompting</li><li>Influenza Forecasting</li>
-          </ul>
-        </li>
-      </ul>
+      <div class="highlight" role="note">
+        <p class="highlight__overline">Featured Research · Dissertation Topic</p>
+        <h3 class="highlight__title">LLM-Based Multimodal &amp; Explainable Epidemic Forecasting</h3>
+        <p class="highlight__desc">A dual-LLM architecture that fuses numerical time series with expert prior knowledge and surveillance reports given as text, fine-tuned with LoRA — up to 26% improvement over state-of-the-art forecasters and effective under data scarcity.</p>
+        <p class="highlight__venue">IEEE Journal of Biomedical and Health Informatics, 2025 (MIFlu)</p>
+        <ul class="tags">
+          <li>LLM</li><li>Multimodal</li><li>LoRA/PEFT</li><li>Prompting</li><li>Influenza Forecasting</li>
+        </ul>
+      </div>
 
-      <ul class="featured-list">
-        <li class="featured reveal">
-          <div class="featured__content">
-            <p class="featured__overline">Featured Research</p>
-            <h3 class="featured__title">RESEAT: Multi-Regional Time-Series Forecasting</h3>
-            <div class="featured__desc">
-              <p>Recurrent self-attention network where LSTMs learn per-region temporal patterns and recurrently connected attention weights model dynamically changing inter-regional relationships, outperforming SOTA on influenza/COVID-19 forecasting while visualizing region correlations.</p>
-            </div>
-            <ul class="featured__tags"><li>Self-Attention</li><li>LSTM</li><li>Multivariate Time Series</li><li>Interpretability</li></ul>
-            <p class="featured__venue"><a class="inline-link" href="https://doi.org/10.1109/JBHI.2023.3247687" target="_blank" rel="noreferrer noopener">IEEE Journal of Biomedical and Health Informatics, 2023</a></p>
-          </div>
-          <a class="featured__img" href="https://doi.org/10.1109/JBHI.2023.3247687" target="_blank" rel="noreferrer noopener" aria-label="RESEAT: Multi-Regional Time-Series Forecasting — paper">
+      <ul class="papers">
+        <li class="paper">
+          <a class="paper__thumb" href="https://doi.org/10.1109/JBHI.2023.3247687" target="_blank" rel="noreferrer noopener" aria-label="RESEAT paper">
             <img src="assets/research/reseat-architecture.png" alt="Overall architecture of RESEAT: input time series is projected to query, key and value; temporal self-attention produces per-step inter-regional attention maps that are recurrently connected by message passing, and the aggregated attention drives the multi-regional forecasting output" loading="lazy">
           </a>
+          <div class="paper__body">
+            <h3 class="paper__title"><a href="https://doi.org/10.1109/JBHI.2023.3247687" target="_blank" rel="noreferrer noopener">RESEAT: Multi-Regional Time-Series Forecasting</a></h3>
+            <p class="paper__desc">Recurrent self-attention network where LSTMs learn per-region temporal patterns and recurrently connected attention weights model dynamically changing inter-regional relationships, outperforming SOTA on influenza/COVID-19 forecasting while visualizing region correlations.</p>
+            <p class="paper__venue">IEEE Journal of Biomedical and Health Informatics, 2023</p>
+            <ul class="tags"><li>Self-Attention</li><li>LSTM</li><li>Multivariate Time Series</li><li>Interpretability</li></ul>
+          </div>
         </li>
 
-        <li class="featured reveal">
-          <div class="featured__content">
-            <p class="featured__overline">Featured Research</p>
-            <h3 class="featured__title">GAN-Based Data Augmentation for Load Forecasting</h3>
-            <div class="featured__desc">
-              <p>A two-stage generation scheme — CTGAN synthesizes virtual input variables, then a regression model trained on real data produces the corresponding outputs — that consistently boosts short-term electric load forecasting accuracy in data-scarce settings.</p>
-            </div>
-            <ul class="featured__tags"><li>CTGAN</li><li>Data Augmentation</li><li>Load Forecasting</li></ul>
-            <p class="featured__venue"><a class="inline-link" href="https://doi.org/10.1109/ACCESS.2020.3037063" target="_blank" rel="noreferrer noopener">IEEE Access, 2020</a></p>
-          </div>
-          <a class="featured__img" href="https://doi.org/10.1109/ACCESS.2020.3037063" target="_blank" rel="noreferrer noopener" aria-label="GAN-Based Data Augmentation for Load Forecasting — paper">
+        <li class="paper">
+          <a class="paper__thumb" href="https://doi.org/10.1109/ACCESS.2020.3037063" target="_blank" rel="noreferrer noopener" aria-label="CTGAN paper">
             <img src="assets/research/ctgan-architecture.png" alt="Overall architecture of the proposed CTGAN-based two-stage data generation scheme: CTGAN and a regression model synthesize artificial input and output variables from real data, which are mixed with the real data to train the short-term load-forecasting model" loading="lazy">
           </a>
+          <div class="paper__body">
+            <h3 class="paper__title"><a href="https://doi.org/10.1109/ACCESS.2020.3037063" target="_blank" rel="noreferrer noopener">GAN-Based Data Augmentation for Load Forecasting</a></h3>
+            <p class="paper__desc">A two-stage generation scheme — CTGAN synthesizes virtual input variables, then a regression model trained on real data produces the corresponding outputs — that consistently boosts short-term electric load forecasting accuracy in data-scarce settings.</p>
+            <p class="paper__venue">IEEE Access, 2020</p>
+            <ul class="tags"><li>CTGAN</li><li>Data Augmentation</li><li>Load Forecasting</li></ul>
+          </div>
         </li>
 
-        <li class="featured reveal">
-          <div class="featured__content">
-            <p class="featured__overline">Featured Research</p>
-            <h3 class="featured__title">Meta-Learning (MAML) for Data-Scarce Prediction</h3>
-            <div class="featured__desc">
-              <p>Region-adaptive MAML initialization for influenza forecasting (MARAPAS), and TAPT — a task-adaptive parameter transformation that improves few-shot animal sound classification accuracy by up to 20.32% over ProtoNet on public benchmarks.</p>
-            </div>
-            <ul class="featured__tags"><li>MAML</li><li>Few-Shot Learning</li><li>Meta-Learning</li><li>Bioacoustics</li></ul>
-            <p class="featured__venue"><a class="inline-link" href="https://doi.org/10.1016/j.jksuci.2022.11.009" target="_blank" rel="noreferrer noopener">Journal of King Saud University – Computer and Information Sciences, 2023</a></p>
-          </div>
-          <a class="featured__img" href="https://doi.org/10.1016/j.jksuci.2022.11.009" target="_blank" rel="noreferrer noopener" aria-label="Meta-Learning (MAML) for Data-Scarce Prediction — paper">
+        <li class="paper">
+          <a class="paper__thumb" href="https://doi.org/10.1016/j.jksuci.2022.11.009" target="_blank" rel="noreferrer noopener" aria-label="Meta-learning paper">
             <img src="assets/research/marapas-architecture.png" alt="Overall architecture of the region-adaptive meta-learning forecasting framework: a forecasting model is meta-learned across influenza tasks from multiple regions, then adapted with few samples to a target region" loading="lazy">
           </a>
-        </li>
-        <li class="featured reveal">
-          <div class="featured__content">
-            <p class="featured__overline">Featured Research</p>
-            <h3 class="featured__title">Two-Stage Data Selection for Long-Term Influenza Forecasting</h3>
-            <div class="featured__desc">
-              <p>Automatically selects which other countries’ surveillance data (168 countries, WHO FluNet) help long-term (26-week) influenza prediction, reducing RMSE by up to ~47% versus conventional inputs across 6 ML models and 3 target countries.</p>
-            </div>
-            <ul class="featured__tags"><li>Feature Selection</li><li>Long-Term Forecasting</li><li>Machine Learning</li></ul>
-            <p class="featured__venue"><a class="inline-link" href="https://doi.org/10.32604/cmc.2021.017435" target="_blank" rel="noreferrer noopener">Computers, Materials &amp; Continua, 2021</a></p>
+          <div class="paper__body">
+            <h3 class="paper__title"><a href="https://doi.org/10.1016/j.jksuci.2022.11.009" target="_blank" rel="noreferrer noopener">Meta-Learning (MAML) for Data-Scarce Prediction</a></h3>
+            <p class="paper__desc">Region-adaptive MAML initialization for influenza forecasting (MARAPAS), and TAPT — a task-adaptive parameter transformation that improves few-shot animal sound classification accuracy by up to 20.32% over ProtoNet on public benchmarks.</p>
+            <p class="paper__venue">Journal of King Saud University – Computer and Information Sciences, 2023</p>
+            <ul class="tags"><li>MAML</li><li>Few-Shot Learning</li><li>Meta-Learning</li><li>Bioacoustics</li></ul>
           </div>
-          <a class="featured__img" href="https://doi.org/10.32604/cmc.2021.017435" target="_blank" rel="noreferrer noopener" aria-label="Two-Stage Data Selection paper">
+        </li>
+
+        <li class="paper">
+          <a class="paper__thumb" href="https://doi.org/10.32604/cmc.2021.017435" target="_blank" rel="noreferrer noopener" aria-label="Data selection paper">
             <img src="assets/research/cmc-selection.png" alt="Two-stage machine-learning data selection framework: multi-country surveillance data is preprocessed, ranked and filtered by forecasting accuracy, then the selected subset feeds the forecasting model" loading="lazy">
           </a>
-        </li>
-        <li class="featured reveal">
-          <div class="featured__content">
-            <p class="featured__overline">Featured Research</p>
-            <h3 class="featured__title">MAVAE: Meta-Learned VAE for Anomaly Detection</h3>
-            <div class="featured__desc">
-              <p>Unsupervised anomaly detection for facility management that meta-learns shared knowledge from normal data across facilities, adapting to new facilities with few samples — ~45% average improvement over SOTA (F1/AUC) on the SKAB benchmark.</p>
-            </div>
-            <ul class="featured__tags"><li>VAE</li><li>MAML</li><li>Anomaly Detection</li><li>Sensor Time Series</li></ul>
-            <p class="featured__venue"><a class="inline-link" href="https://doi.org/10.1016/j.jobe.2023.106099" target="_blank" rel="noreferrer noopener">Journal of Building Engineering, 2023</a></p>
+          <div class="paper__body">
+            <h3 class="paper__title"><a href="https://doi.org/10.32604/cmc.2021.017435" target="_blank" rel="noreferrer noopener">Two-Stage Data Selection for Long-Term Influenza Forecasting</a></h3>
+            <p class="paper__desc">Automatically selects which other countries’ surveillance data (168 countries, WHO FluNet) help long-term (26-week) influenza prediction, reducing RMSE by up to ~47% versus conventional inputs across 6 ML models and 3 target countries.</p>
+            <p class="paper__venue">Computers, Materials &amp; Continua, 2021</p>
+            <ul class="tags"><li>Feature Selection</li><li>Long-Term Forecasting</li><li>Machine Learning</li></ul>
           </div>
-          <a class="featured__img" href="https://doi.org/10.1016/j.jobe.2023.106099" target="_blank" rel="noreferrer noopener" aria-label="MAVAE paper">
+        </li>
+
+        <li class="paper">
+          <a class="paper__thumb" href="https://doi.org/10.1016/j.jobe.2023.106099" target="_blank" rel="noreferrer noopener" aria-label="MAVAE paper">
             <img src="assets/research/mavae.png" alt="MAVAE framework: a VAE is meta-learned on normal data from multiple anomaly-detection tasks, then adapted to a target facility with few normal samples to detect anomalies" loading="lazy">
           </a>
+          <div class="paper__body">
+            <h3 class="paper__title"><a href="https://doi.org/10.1016/j.jobe.2023.106099" target="_blank" rel="noreferrer noopener">MAVAE: Meta-Learned VAE for Anomaly Detection</a></h3>
+            <p class="paper__desc">Unsupervised anomaly detection for facility management that meta-learns shared knowledge from normal data across facilities, adapting to new facilities with few samples — ~45% average improvement over SOTA (F1/AUC) on the SKAB benchmark.</p>
+            <p class="paper__venue">Journal of Building Engineering, 2023</p>
+            <ul class="tags"><li>VAE</li><li>MAML</li><li>Anomaly Detection</li><li>Sensor Time Series</li></ul>
+          </div>
         </li>
       </ul>
 
-
-      <!-- Publications list (al-folio style) -->
-      <div class="publications reveal">
-        <h3 class="publications__heading">First-Author Publications</h3>
-        <ol class="publications__list" reversed>
+      <!-- Publications list -->
+      <div class="publications">
+        <h3 class="subheading">First-Author Publications</h3>
+        <ol class="pub-list" reversed>
           <li class="pub">
             <span class="pub__year">2026</span>
             <div class="pub__body">
@@ -370,15 +302,15 @@
             </div>
           </li>
         </ol>
-        <p class="publications__note">10+ co-authored international journal publications, including IEEE JBHI, Journal of Computational Science, Ecological Informatics, Expert Systems with Applications, and Journal of Building Engineering.</p>
+        <p class="pub-note">10+ co-authored international journal publications, including IEEE JBHI, Journal of Computational Science, Ecological Informatics, Expert Systems with Applications, and Journal of Building Engineering.</p>
       </div>
 
       <!-- ===== Patents (scaffold) =====
            Hidden until the full list is finalized. To PUBLISH: remove the `hidden` attribute below.
            The entries are pre-drafted from the CV as a starting point — VERIFY every title / inventor / number / date before publishing, and add the remaining patents to reach the full set. Duplicate one <li class="pub"> block per patent. -->
-      <div class="publications patents reveal" hidden>
-        <h3 class="publications__heading">Patents</h3>
-        <ol class="publications__list" reversed>
+      <div class="publications" hidden>
+        <h3 class="subheading">Patents</h3>
+        <ol class="pub-list" reversed>
           <li class="pub">
             <span class="pub__year">2026</span>
             <div class="pub__body">
@@ -439,58 +371,38 @@
       </div>
     </section>
 
-    <!-- 04. Projects -->
-    <section id="projects" class="section reveal">
-      <h2 class="numbered-heading"><span>04.</span> Things I’ve Built</h2>
+    <!-- Projects -->
+    <section id="projects" class="section">
+      <h2 class="section__heading">Projects</h2>
 
-      <ul class="projects-grid">
-        <li class="project-card reveal">
-          <div class="project-card__inner">
-            <header>
-              <div class="project-card__top">
-                <div class="project-card__folder" aria-hidden="true">
-                  <svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><title>Folder</title><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
-                </div>
-              </div>
-              <h3 class="project-card__title">Explainable ILI Forecasting with Self-Instructed LLMs</h3>
-              <p class="project-card__desc">First-author research project: combines ILI time series with CDC FluView / Japan IDWR surveillance reports, using GPT-generated explanation labels to LoRA fine-tune LLaMA-3.1-70B (LLaMA-Factory, DeepSpeed ZeRO-3) so the model produces predictions together with the reasoning behind them. Includes an LLM-judge evaluation of explanation quality and classic TSF baselines (DLinear, PatchTST, etc.). Submitted to IEEE BIBM 2026.</p>
-            </header>
-            <footer>
-              <ul class="project-card__tech">
-                <li>LLaMA-3.1-70B</li><li>LoRA</li><li>Self-Instruct</li><li>LLaMA-Factory</li><li>DeepSpeed</li><li>vLLM</li>
-              </ul>
-            </footer>
+      <ul class="project-list">
+        <li class="project">
+          <div class="project__head">
+            <h3 class="project__title">Explainable ILI Forecasting with Self-Instructed LLMs</h3>
           </div>
+          <p class="project__desc">First-author research project: combines ILI time series with CDC FluView / Japan IDWR surveillance reports, using GPT-generated explanation labels to LoRA fine-tune LLaMA-3.1-70B (LLaMA-Factory, DeepSpeed ZeRO-3) so the model produces predictions together with the reasoning behind them. Includes an LLM-judge evaluation of explanation quality and classic TSF baselines (DLinear, PatchTST, etc.). Submitted to IEEE BIBM 2026.</p>
+          <ul class="tags">
+            <li>LLaMA-3.1-70B</li><li>LoRA</li><li>Self-Instruct</li><li>LLaMA-Factory</li><li>DeepSpeed</li><li>vLLM</li>
+          </ul>
         </li>
 
-        <li class="project-card reveal">
-          <div class="project-card__inner">
-            <header>
-              <div class="project-card__top">
-                <div class="project-card__folder" aria-hidden="true">
-                  <svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><title>Folder</title><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
-                </div>
-                <div class="project-card__links">
-                  <a href="https://github.com/JongHwa-Shim/hierarchical_ai_agent" target="_blank" rel="noreferrer noopener" aria-label="GitHub repository">
-                    <svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><title>GitHub</title><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
-                  </a>
-                </div>
-              </div>
-              <h3 class="project-card__title"><a href="https://github.com/JongHwa-Shim/hierarchical_ai_agent" target="_blank" rel="noreferrer noopener">Hierarchical AI Agent Framework</a></h3>
-              <p class="project-card__desc">A hierarchical multi-agent chatbot framework built for an Incheon International Airport chatbot project: a main agent recursively delegates tasks to sub-agents (browser, PDF, vector-DB), and every action is emitted as executable Python code (CodeAct/ReAct paradigm). Native functions, MCP server tools, and sub-agents are all exposed to the LLM as uniform callable tools.</p>
-            </header>
-            <footer>
-              <ul class="project-card__tech">
-                <li>Multi-Agent</li><li>CodeAct/ReAct</li><li>MCP</li><li>LangChain</li><li>Python</li>
-              </ul>
-            </footer>
+        <li class="project">
+          <div class="project__head">
+            <h3 class="project__title"><a href="https://github.com/JongHwa-Shim/hierarchical_ai_agent" target="_blank" rel="noreferrer noopener">Hierarchical AI Agent Framework</a></h3>
+            <a class="project__repo" href="https://github.com/JongHwa-Shim/hierarchical_ai_agent" target="_blank" rel="noreferrer noopener" aria-label="GitHub repository">
+              <svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><title>GitHub</title><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+            </a>
           </div>
+          <p class="project__desc">A hierarchical multi-agent chatbot framework built for an Incheon International Airport chatbot project: a main agent recursively delegates tasks to sub-agents (browser, PDF, vector-DB), and every action is emitted as executable Python code (CodeAct/ReAct paradigm). Native functions, MCP server tools, and sub-agents are all exposed to the LLM as uniform callable tools.</p>
+          <ul class="tags">
+            <li>Multi-Agent</li><li>CodeAct/ReAct</li><li>MCP</li><li>LangChain</li><li>Python</li>
+          </ul>
         </li>
       </ul>
 
-      <div class="gradproj reveal">
-        <h3 class="gradproj__heading">Graduate Industry-Academic Projects</h3>
-        <ol class="gradproj__list">
+      <div class="gradproj">
+        <h3 class="subheading">Graduate Industry-Academic Projects</h3>
+        <ol class="gp-list">
           <li class="gp">
             <span class="gp__period">2019–2023</span>
             <div class="gp__body">
@@ -537,15 +449,14 @@
       </div>
     </section>
 
-    <!-- 05. Contact -->
-    <section id="contact" class="section section--contact reveal">
-      <p class="contact__overline">05. What’s Next?</p>
-      <h2 class="medium-heading">Get In Touch</h2>
+    <!-- Contact -->
+    <section id="contact" class="section section--contact">
+      <h2 class="section__heading">Get In Touch</h2>
       <p class="contact__desc">
         My inbox is always open — whether it is a question about my research,
         a collaboration idea, or an opportunity, I will do my best to get back to you.
       </p>
-      <a class="btn btn--big" href="mailto:jaewookmo@gmail.com">Say Hello</a>
+      <a class="btn" href="mailto:jaewookmo@gmail.com">Say Hello</a>
     </section>
   </main>
 
@@ -558,7 +469,7 @@
         <svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><title>Email</title><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
       </a>
     </div>
-    <p>Built by Jaeuk Moon · Design adapted from <a href="https://brittanychiang.com" target="_blank" rel="noreferrer noopener">Brittany Chiang</a></p>
+    <p>Built by Jaeuk Moon</p>
   </footer>
 
   <script src="js/main.js"></script>
