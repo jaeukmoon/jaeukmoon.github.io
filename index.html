@@ -39,6 +39,7 @@
           <li><a href="#experience">experience</a></li>
           <li><a href="#research">research</a></li>
           <li><a href="#projects">projects</a></li>
+          <li><a href="#builds">side projects</a></li>
           <li><a class="nav__resume" href="assets/resume.pdf" target="_blank" rel="noreferrer noopener">resume</a></li>
         </ul>
       </nav>
@@ -113,6 +114,17 @@
           <div class="intro__contacts">
             <a href="mailto:jaewookmo@gmail.com">jaewookmo@gmail.com</a>
             <a href="https://github.com/jaeukmoon" target="_blank" rel="noreferrer noopener">github.com/jaeukmoon</a>
+          </div>
+          <div class="intro__social" aria-label="Profiles">
+            <a href="https://github.com/jaeukmoon" target="_blank" rel="noreferrer noopener" aria-label="GitHub">
+              <svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><title>GitHub</title><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+            </a>
+            <a href="https://www.linkedin.com/in/jaeuk-moon-0128b9249/" target="_blank" rel="noreferrer noopener" aria-label="LinkedIn">
+              <svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="currentColor"><title>LinkedIn</title><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"></path></svg>
+            </a>
+            <a href="https://scholar.google.com/citations?user=rcvn-mQAAAAJ&hl=ko" target="_blank" rel="noreferrer noopener" aria-label="Google Scholar">
+              <svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="currentColor"><title>Google Scholar</title><path d="M5.242 13.769L0 9.5 12 0l12 9.5-5.242 4.269C17.548 11.249 14.978 9.5 12 9.5c-2.977 0-5.548 1.748-6.758 4.269zM12 10a7 7 0 1 0 0 14 7 7 0 0 0 0-14z"></path></svg>
+            </a>
           </div>
         </aside>
       </div>
@@ -455,6 +467,50 @@
           </li>
         </ol>
       </div>
+    </section>
+
+    <!-- Side Projects (self-built web apps) -->
+    <section id="builds" class="section">
+      <h2 class="section__heading">Side Projects</h2>
+      <p class="builds__lead">Full web apps I designed and built end-to-end and deployed on GitHub Pages — mostly for daily use and for fun.</p>
+
+      <ul class="builds">
+        <li class="build">
+          <a class="build__thumb" href="https://jaeukmoon.github.io/kr-job-radar/" target="_blank" rel="noreferrer noopener" aria-label="Open Job Monitor">
+            <img src="assets/builds/job-monitor.png" alt="Job Monitor dashboard showing a hiring-trend chart, skill-keyword tags, and company filters for Korean AI/ML job postings" loading="lazy" width="880" height="550">
+          </a>
+          <div class="build__body">
+            <h3 class="build__title"><a href="https://jaeukmoon.github.io/kr-job-radar/" target="_blank" rel="noreferrer noopener">Job Monitor</a></h3>
+            <p class="build__desc">Aggregates AI/ML/data job postings from 11 Korean tech companies (Naver, Kakao, Coupang, Toss, LG AI Research…) into one daily-updated board with a hiring-trend and skill-keyword dashboard. Static front-end plus GitHub Actions crawlers that clear WAF-protected career sites via headless Chrome.</p>
+            <ul class="tags"><li>JavaScript</li><li>GitHub Actions</li><li>Web Scraping</li><li>Dashboard</li></ul>
+            <a class="build__link" href="https://jaeukmoon.github.io/kr-job-radar/" target="_blank" rel="noreferrer noopener">Visit site &rarr;</a>
+          </div>
+        </li>
+
+        <li class="build">
+          <a class="build__thumb" href="https://jaeukmoon.github.io/TSF/" target="_blank" rel="noreferrer noopener" aria-label="Open TSF Leaderboard Tracker">
+            <img src="assets/builds/tsf-tracker.png" alt="TSF Leaderboard Tracker showing a sortable table of time-series forecasting foundation models ranked by CRPS and MASE" loading="lazy" width="880" height="550">
+          </a>
+          <div class="build__body">
+            <h3 class="build__title"><a href="https://jaeukmoon.github.io/TSF/" target="_blank" rel="noreferrer noopener">TSF Leaderboard Tracker</a></h3>
+            <p class="build__desc">A live mirror of time-series forecasting foundation-model leaderboards (GIFT-Eval, fev-bench) plus a curated long-term-forecasting paper board. Searchable and sortable with a data-leakage guard, auto-refreshed weekly — built to track my own research field at a glance.</p>
+            <ul class="tags"><li>Time-Series</li><li>Leaderboard</li><li>JavaScript</li><li>Auto-Update</li></ul>
+            <a class="build__link" href="https://jaeukmoon.github.io/TSF/" target="_blank" rel="noreferrer noopener">Visit site &rarr;</a>
+          </div>
+        </li>
+
+        <li class="build">
+          <a class="build__thumb" href="https://jaeukmoon.github.io/opic-site/" target="_blank" rel="noreferrer noopener" aria-label="Open OPIc Question Bank">
+            <img src="assets/builds/opic.png" alt="OPIc Question Bank showing English speaking-test questions with bilingual Korean prompts and a category sidebar" loading="lazy" width="880" height="550">
+          </a>
+          <div class="build__body">
+            <h3 class="build__title"><a href="https://jaeukmoon.github.io/opic-site/" target="_blank" rel="noreferrer noopener">OPIc Question Bank</a></h3>
+            <p class="build__desc">An English speaking-test (OPIc) prep app: 379 questions across 40 topics with bilingual EN/KO prompts, an answer-strategy guide, and per-question notes saved locally in the browser. Zero dependencies, fully static.</p>
+            <ul class="tags"><li>JavaScript</li><li>Static SPA</li><li>localStorage</li><li>EdTech</li></ul>
+            <a class="build__link" href="https://jaeukmoon.github.io/opic-site/" target="_blank" rel="noreferrer noopener">Visit site &rarr;</a>
+          </div>
+        </li>
+      </ul>
     </section>
 
     <!-- Contact -->

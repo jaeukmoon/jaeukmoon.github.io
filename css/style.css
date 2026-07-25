@@ -140,6 +140,10 @@ main { max-width: var(--content); margin: 0 auto; padding: 0 24px; }
 .edu-item__details { color: var(--muted); font-size: 0.8rem; margin: 5px 0 0; line-height: 1.55; }
 .intro__contacts { display: flex; flex-direction: column; gap: 4px; margin-top: 22px; }
 .intro__contacts a { font-size: 0.88rem; }
+.intro__social { display: flex; gap: 15px; margin-top: 12px; }
+.intro__social a { color: var(--muted); display: inline-flex; }
+.intro__social a:hover { color: var(--accent); }
+.intro__social svg { width: 20px; height: 20px; }
 
 /* ===== Experience ===== */
 .job { margin-bottom: 38px; }
@@ -253,6 +257,30 @@ main { max-width: var(--content); margin: 0 auto; padding: 0 24px; }
 }
 .gp__title { font-weight: 600; font-size: 0.93rem; margin: 0; }
 .gp__desc { color: var(--muted); font-size: 0.86rem; margin: 2px 0 0; max-width: 74ch; }
+
+/* ===== Side Projects ===== */
+.builds__lead { color: var(--muted); font-size: 0.95rem; margin: -8px 0 24px; max-width: 72ch; }
+.builds {
+  list-style: none; margin: 0; padding: 0;
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 22px;
+}
+.build {
+  border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden;
+  display: flex; flex-direction: column;
+  transition: box-shadow 0.15s ease, border-color 0.15s ease;
+}
+.build:hover { border-color: #d5dade; box-shadow: 0 3px 14px rgba(33, 37, 41, 0.06); }
+.build__thumb { display: block; border-bottom: 1px solid var(--line); background: #f4f6f7; }
+.build__thumb img {
+  display: block; width: 100%; height: auto;
+  aspect-ratio: 880 / 550; object-fit: cover; object-position: top;
+}
+.build__thumb:hover { opacity: 0.94; }
+.build__body { padding: 16px 18px 18px; display: flex; flex-direction: column; flex: 1; }
+.build__title { font-size: 1rem; font-weight: 600; margin: 0 0 7px; }
+.build__desc { font-size: 0.85rem; color: var(--muted); margin: 0 0 12px; line-height: 1.55; }
+.build__body .tags { margin: 0 0 14px; }
+.build__link { font-size: 0.85rem; font-weight: 500; color: var(--accent); align-self: flex-start; margin-top: auto; }
 
 /* ===== Contact ===== */
 .section--contact { padding-bottom: 30px; }
