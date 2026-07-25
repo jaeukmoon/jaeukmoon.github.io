@@ -226,6 +226,24 @@ main { max-width: var(--content); margin: 0 auto; padding: 0 24px; }
 .pub__authors strong { color: var(--ink); font-weight: 600; }
 .pub__venue { color: var(--faint); font-size: 0.82rem; font-style: italic; margin: 1px 0 0; }
 .pub-note { color: var(--muted); font-size: 0.86rem; margin-top: 16px; }
+.section-lead { color: var(--muted); font-size: 0.9rem; margin: -6px 0 6px; max-width: 72ch; }
+
+/* Collapsible co-authored list */
+.pub-more { margin-top: 18px; }
+.pub-more__toggle {
+  cursor: pointer; list-style: none;
+  display: inline-flex; align-items: center; gap: 7px;
+  color: var(--accent); font-size: 0.9rem; font-weight: 500;
+  padding: 6px 0; user-select: none;
+}
+.pub-more__toggle::-webkit-details-marker { display: none; }
+.pub-more__toggle::before {
+  content: "\25B8"; font-size: 0.82em; color: var(--accent-soft);
+  transition: transform 0.15s ease;
+}
+.pub-more[open] .pub-more__toggle::before { transform: rotate(90deg); }
+.pub-more__toggle:hover { text-decoration: underline; text-underline-offset: 3px; }
+.pub-more .pub-list { margin-top: 12px; }
 
 /* ===== Projects ===== */
 .project-list {
