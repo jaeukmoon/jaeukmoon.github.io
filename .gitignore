@@ -1,0 +1,4 @@
+*.bak
+.claude/
+/results/
+/logs/
