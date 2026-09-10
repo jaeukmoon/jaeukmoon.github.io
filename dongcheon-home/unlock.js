@@ -30,7 +30,8 @@ form.addEventListener('submit', async event => {
     const modelURL = URL.createObjectURL(new Blob([bundle.model], {type:'text/javascript'}));
     const app = bundle.app.replace("'./model.js'", JSON.stringify(modelURL))
       .replace("'./assets/OrbitControls.js'", JSON.stringify(new URL('assets/OrbitControls.js',baseURL).href))
-      .replace("'./assets/RoundedBoxGeometry.js'", JSON.stringify(new URL('assets/RoundedBoxGeometry.js',baseURL).href));
+      .replace("'./assets/RoundedBoxGeometry.js'", JSON.stringify(new URL('assets/RoundedBoxGeometry.js',baseURL).href))
+      .replace("'./assets/realism.js'", JSON.stringify(new URL('assets/realism.js',baseURL).href));
     const appURL = URL.createObjectURL(new Blob([app], {type:'text/javascript'}));
     const photoURL = URL.createObjectURL(new Blob([fromBase64(bundle.photo)], {type:'image/jpeg'}));
     const storageKey = 'private-home-layout-v1';

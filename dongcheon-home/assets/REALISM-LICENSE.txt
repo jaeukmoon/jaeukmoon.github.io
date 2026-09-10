@@ -1,0 +1,3 @@
+Textures and Sofa_01: Poly Haven, CC0. https://polyhaven.com/license
+Three.js addons: MIT, version 0.169.0. See THREE-LICENSE.txt.
+These are generic visualization assets, not surveyed materials or furniture from the apartment.
