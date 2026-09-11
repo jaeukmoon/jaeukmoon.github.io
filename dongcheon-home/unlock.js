@@ -38,7 +38,17 @@ form.addEventListener('submit', async event => {
     const photoURL = URL.createObjectURL(new Blob([fromBase64(bundle.photo)], {type:'image/jpeg'}));
     const storageKey = 'private-home-layout-v1';
     Object.defineProperty(window, '__homeVault', {value: {
-      async load() { const saved=localStorage.getItem(storageKey); return saved ? decryptText(JSON.parse(saved),key) : null; },
+      async load() {
+        const saved=localStorage.getItem(storageKey);if(!saved)return null;
+        const data=JSON.parse(saved);
+        try{return await decryptText(data,key);}catch(error){
+          if(!bundle.previousLayoutKey)throw error;
+          const previous=await crypto.subtle.importKey('raw',fromBase64(bundle.previousLayoutKey),{name:'AES-GCM'},false,['decrypt']);
+          const value=await decryptText(data,previous);
+          localStorage.setItem(storageKey,JSON.stringify(await encryptText(value,key)));
+          return value;
+        }
+      },
       async save(value) { localStorage.setItem(storageKey, JSON.stringify(await encryptText(value,key))); }
     }, configurable:false});
     let html = bundle.html.replace('<link rel="stylesheet" href="./style.css">', `<style>${bundle.css}</style>`)
