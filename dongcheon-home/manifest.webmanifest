@@ -1,8 +1,8 @@
 {
   "id": "./",
-  "name": "우리의 첫 집",
-  "short_name": "우리 집",
-  "description": "비밀번호로 입장하는 우리 집 3D 공간과 가구 배치",
+  "name": "욱봉 신혼집",
+  "short_name": "욱봉 신혼집",
+  "description": "비밀번호로 입장하는 욱봉 신혼집 3D 공간과 가구 배치",
   "lang": "ko",
   "start_url": "./",
   "scope": "./",
