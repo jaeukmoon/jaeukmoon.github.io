@@ -20,7 +20,8 @@ form.addEventListener('submit', async event => {
   let unlocked = false;
   try {
     if (!crypto.subtle) throw new Error('HTTPS 환경에서 다시 열어주세요.');
-    const response = await fetch(new URL('home.encrypted.json', baseURL), {cache:'no-store'});
+    const payloadURL=new URL('home.encrypted.json',baseURL);payloadURL.searchParams.set('fresh',String(Date.now()));
+    const response = await fetch(payloadURL, {cache:'no-store'});
     if (!response.ok) throw new Error('공간 데이터를 불러오지 못했습니다. 잠시 후 다시 시도해주세요.');
     const envelope = await response.json();
     if (envelope.version !== 1 || envelope.iterations !== iterations || fromBase64(envelope.salt).length !== 24) throw new Error('공간 데이터 형식이 올바르지 않습니다.');
@@ -28,14 +29,16 @@ form.addEventListener('submit', async event => {
     let bundle;
     try { bundle = JSON.parse(await decryptText(envelope, key)); }
     catch { throw new Error('비밀번호가 맞지 않거나 데이터가 손상되었습니다. 다시 확인해주세요.'); }
-    for (const name of ['html','css','app','model','settings','photo','sunlight']) if (typeof bundle[name] !== 'string') throw new Error('공간 파일이 불완전합니다.');
+    for (const name of ['html','css','app','model','settings','photo','sunlight','noteTools']) if (typeof bundle[name] !== 'string') throw new Error('공간 파일이 불완전합니다.');
     const settingsURL = URL.createObjectURL(new Blob([bundle.settings], {type:'text/javascript'}));
     const model = bundle.model.replace("'./scene-settings.js'", JSON.stringify(settingsURL));
     const modelURL = URL.createObjectURL(new Blob([model], {type:'text/javascript'}));
     const sunlight=bundle.sunlight.replace("'./assets/suncalc.js'",JSON.stringify(new URL('assets/suncalc.js',baseURL).href));
     const sunlightURL=URL.createObjectURL(new Blob([sunlight],{type:'text/javascript'}));
+    const noteToolsURL=URL.createObjectURL(new Blob([bundle.noteTools],{type:'text/javascript'}));
     const app = bundle.app.replace("'./model.js'", JSON.stringify(modelURL))
       .replace("'./sunlight.js'", JSON.stringify(sunlightURL))
+      .replace("'./notes.js'", JSON.stringify(noteToolsURL))
       .replace("'./assets/OrbitControls.js'", JSON.stringify(new URL('assets/OrbitControls.js',baseURL).href))
       .replace("'./assets/RoundedBoxGeometry.js'", JSON.stringify(new URL('assets/RoundedBoxGeometry.js',baseURL).href))
       .replace("'./assets/realism.js'", JSON.stringify(new URL('assets/realism.js',baseURL).href));
