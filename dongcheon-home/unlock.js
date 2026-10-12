@@ -1,9 +1,11 @@
 import {deriveKey, decryptText, encryptText, fromBase64, iterations} from './crypto.js';
+import {setupAppInstall} from './install.js';
 const form = document.querySelector('#unlock-form');
 const input = document.querySelector('#password');
 const status = document.querySelector('#status');
 const submit = document.querySelector('#submit');
 const baseURL = new URL('./', location.href);
+const mountInstall=setupAppInstall(baseURL);
 document.querySelector('#show-password').onclick = event => {
   const visible = input.type === 'password';
   input.type = visible ? 'text' : 'password';
@@ -58,11 +60,12 @@ form.addEventListener('submit', async event => {
       .replace('"./assets/three.module.js"', JSON.stringify(new URL('assets/three.module.js',baseURL).href))
       .replace('src="./assets/floorplan.jpg"', `src="${photoURL}"`)
       .replace('<script type="module" src="./app.js"></script>', `<script type="module" src="${appURL}"></script>`)
-      .replace('<button id="save" class="primary">', '<button id="lock-home" title="공간 잠그기">잠금</button><button id="save" class="primary">')
-      .replace('<meta charset="UTF-8">', '<meta charset="UTF-8"><meta name="robots" content="noindex,nofollow"><meta name="referrer" content="no-referrer">');
+      .replace('<button id="save" class="primary">배치 저장</button>', '<div class="home-actions"><button id="install-app" type="button">앱 받기</button><button id="lock-home" title="공간 잠그기">잠금</button><button id="save" class="primary">배치 저장</button></div>')
+      .replace('<meta charset="UTF-8">', `<meta charset="UTF-8"><meta name="robots" content="noindex,nofollow"><meta name="referrer" content="no-referrer"><meta name="theme-color" content="#28564b"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="우리 집"><link rel="manifest" href="${new URL('manifest.webmanifest',baseURL).href}"><link rel="apple-touch-icon" href="${new URL('app-icons/apple-touch-icon.png',baseURL).href}"><link rel="stylesheet" href="${new URL('install.css',baseURL).href}">`);
     input.value = '';
     unlocked = true;
     document.open(); document.write(html); document.close();
+    mountInstall();
   } catch (error) {
     status.textContent = error.message || '열지 못했습니다. 네트워크 연결을 확인해주세요.';
   } finally {
