@@ -1,7 +1,7 @@
-import {deriveKey, decryptText, encryptText, fromBase64, iterations} from './crypto.js?v=7d1e2f9eef6e';
-import {setupAppInstall} from './install.js?v=7d1e2f9eef6e';
-import {loadDeviceAuth,saveDeviceAuth,forgetDeviceAuth} from './device-auth.js?v=7d1e2f9eef6e';
-import {setupUpdates} from './updates.js?v=7d1e2f9eef6e';
+import {deriveKey, decryptText, encryptText, fromBase64, iterations} from './crypto.js?v=f1ccbcae99e0';
+import {setupAppInstall} from './install.js?v=f1ccbcae99e0';
+import {loadDeviceAuth,saveDeviceAuth,forgetDeviceAuth} from './device-auth.js?v=f1ccbcae99e0';
+import {setupUpdates} from './updates.js?v=f1ccbcae99e0';
 const form = document.querySelector('#unlock-form');
 const input = document.querySelector('#password');
 const status = document.querySelector('#status');
@@ -53,6 +53,8 @@ async function unlock(savedAuth){
     const appURL = URL.createObjectURL(new Blob([app], {type:'text/javascript'}));
     const photoURL = URL.createObjectURL(new Blob([fromBase64(bundle.photo)], {type:'image/jpeg'}));
     const storageKey = 'private-home-layout-v1';
+    const connectionKey='private-home-memo-connection-v1',connectionAAD=new TextEncoder().encode('home-memo-connection-v1');
+    async function storedValue(name,aad){const saved=localStorage.getItem(name);if(!saved)return null;const data=JSON.parse(saved);try{return await decryptText(data,key,aad);}catch(error){for(const raw of bundle.previousLayoutKeys||[]){const previous=await crypto.subtle.importKey('raw',fromBase64(raw),{name:'AES-GCM'},false,['decrypt']);let value;try{value=await decryptText(data,previous,aad);}catch{continue;}localStorage.setItem(name,JSON.stringify(await encryptText(value,key,aad)));return value;}throw error;}}
     Object.defineProperty(window, '__homeVault', {value: {
       async load() {
         const saved=localStorage.getItem(storageKey);if(!saved)return null;
@@ -69,6 +71,15 @@ async function unlock(savedAuth){
         }
       },
       async save(value) { localStorage.setItem(storageKey, JSON.stringify(await encryptText(value,key))); },
+      loadMemoConnection(){return storedValue(connectionKey,connectionAAD);},
+      saveMemoConnection(value){return encryptText(value,key,connectionAAD).then(encrypted=>localStorage.setItem(connectionKey,JSON.stringify(encrypted)));},
+      async memoRpc(path,payload){
+        if(!bundle.memoEndpoint||!['pair','submit','status'].includes(path))throw new Error('메모 자동 연결을 준비하고 있습니다.');
+        const aad=direction=>new TextEncoder().encode(`home-memos/${path}/${direction}-v1`),encrypted=await encryptText(JSON.stringify(payload),key,aad('request'));
+        const controller=new AbortController(),timer=setTimeout(()=>controller.abort(),12000);let response;try{response=await fetch(new URL(path,bundle.memoEndpoint),{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(encrypted),signal:controller.signal});}catch{throw new Error('집 PC의 메모 수신 연결을 기다리고 있습니다. 메모는 이 기기에 저장돼요.');}finally{clearTimeout(timer);}
+        if(!response.ok)throw Object.assign(new Error(response.status===403?'작성 기기 연결 코드를 확인해주세요.':'연결을 기다리고 있습니다. 메모는 이 기기에 저장됐어요.'),{status:response.status});
+        return JSON.parse(await decryptText(await response.json(),key,aad('response')));
+      },
       ready(hooks){refreshHooks=hooks;}
     }, configurable:false});
     let html = bundle.html.replace('<link rel="stylesheet" href="./style.css">', `<style>${bundle.css}</style>`)
@@ -76,7 +87,7 @@ async function unlock(savedAuth){
       .replace('src="./assets/floorplan.jpg"', `src="${photoURL}"`)
       .replace('<script type="module" src="./app.js"></script>', `<script type="module" src="${appURL}"></script>`)
       .replace('<button id="save" class="primary">배치 저장</button>', '<div class="home-actions"><button id="install-app" type="button">앱 받기</button><button id="refresh-home" type="button" title="최신 업데이트 불러오기">새로고침</button><button id="lock-home" title="기기 인증 지우고 잠그기">잠금</button><button id="save" class="primary">배치 저장</button></div>')
-      .replace('<meta charset="UTF-8">', `<meta charset="UTF-8"><meta name="robots" content="noindex,nofollow"><meta name="referrer" content="no-referrer"><meta name="theme-color" content="#28564b"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="욱봉 신혼집"><link rel="manifest" href="${new URL('manifest.webmanifest',baseURL).href}"><link rel="apple-touch-icon" href="${new URL('app-icons/apple-touch-icon.png',baseURL).href}"><link rel="stylesheet" href="${new URL('install.css?v=7d1e2f9eef6e',baseURL).href}">`);
+      .replace('<meta charset="UTF-8">', `<meta charset="UTF-8"><meta name="robots" content="noindex,nofollow"><meta name="referrer" content="no-referrer"><meta name="theme-color" content="#28564b"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="욱봉 신혼집"><link rel="manifest" href="${new URL('manifest.webmanifest',baseURL).href}"><link rel="apple-touch-icon" href="${new URL('app-icons/apple-touch-icon.png',baseURL).href}"><link rel="stylesheet" href="${new URL('install.css?v=f1ccbcae99e0',baseURL).href}">`);
     input.value = '';
     unlocked = true;
     document.open(); document.write(html); document.close();
