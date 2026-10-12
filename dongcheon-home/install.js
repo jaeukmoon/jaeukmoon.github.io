@@ -27,7 +27,7 @@ export function setupAppInstall(baseURL){
     window.addEventListener('hashchange',syncFocus);
     syncFocus();
     dialog.addEventListener('keydown',event=>{
-      if(event.key==='Escape'){event.preventDefault();dialog.querySelector('.install-close').click();}
+      if(event.key==='Escape'){event.preventDefault();event.stopPropagation();dialog.querySelector('.install-close').click();}
       if(event.key==='Tab'){
         const targets=[...dialog.querySelectorAll('a,button,input')].filter(element=>!element.hidden&&!element.disabled);
         const first=targets[0],last=targets.at(-1);
