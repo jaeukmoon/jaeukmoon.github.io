@@ -42,11 +42,14 @@ form.addEventListener('submit', async event => {
         const saved=localStorage.getItem(storageKey);if(!saved)return null;
         const data=JSON.parse(saved);
         try{return await decryptText(data,key);}catch(error){
-          if(!bundle.previousLayoutKey)throw error;
-          const previous=await crypto.subtle.importKey('raw',fromBase64(bundle.previousLayoutKey),{name:'AES-GCM'},false,['decrypt']);
-          const value=await decryptText(data,previous);
-          localStorage.setItem(storageKey,JSON.stringify(await encryptText(value,key)));
-          return value;
+          for(const raw of bundle.previousLayoutKeys||[]){
+            const previous=await crypto.subtle.importKey('raw',fromBase64(raw),{name:'AES-GCM'},false,['decrypt']);
+            let value;
+            try{value=await decryptText(data,previous);}catch{continue;}
+            localStorage.setItem(storageKey,JSON.stringify(await encryptText(value,key)));
+            return value;
+          }
+          throw error;
         }
       },
       async save(value) { localStorage.setItem(storageKey, JSON.stringify(await encryptText(value,key))); }
