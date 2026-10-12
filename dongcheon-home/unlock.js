@@ -29,16 +29,18 @@ form.addEventListener('submit', async event => {
     let bundle;
     try { bundle = JSON.parse(await decryptText(envelope, key)); }
     catch { throw new Error('비밀번호가 맞지 않거나 데이터가 손상되었습니다. 다시 확인해주세요.'); }
-    for (const name of ['html','css','app','model','settings','photo','sunlight','noteTools']) if (typeof bundle[name] !== 'string') throw new Error('공간 파일이 불완전합니다.');
+    for (const name of ['html','css','app','model','settings','photo','sunlight','noteTools','joystick']) if (typeof bundle[name] !== 'string') throw new Error('공간 파일이 불완전합니다.');
     const settingsURL = URL.createObjectURL(new Blob([bundle.settings], {type:'text/javascript'}));
     const model = bundle.model.replace("'./scene-settings.js'", JSON.stringify(settingsURL));
     const modelURL = URL.createObjectURL(new Blob([model], {type:'text/javascript'}));
     const sunlight=bundle.sunlight.replace("'./assets/suncalc.js'",JSON.stringify(new URL('assets/suncalc.js',baseURL).href));
     const sunlightURL=URL.createObjectURL(new Blob([sunlight],{type:'text/javascript'}));
     const noteToolsURL=URL.createObjectURL(new Blob([bundle.noteTools],{type:'text/javascript'}));
+    const joystickURL=URL.createObjectURL(new Blob([bundle.joystick],{type:'text/javascript'}));
     const app = bundle.app.replace("'./model.js'", JSON.stringify(modelURL))
       .replace("'./sunlight.js'", JSON.stringify(sunlightURL))
       .replace("'./notes.js'", JSON.stringify(noteToolsURL))
+      .replace("'./joystick.js'", JSON.stringify(joystickURL))
       .replace("'./assets/OrbitControls.js'", JSON.stringify(new URL('assets/OrbitControls.js',baseURL).href))
       .replace("'./assets/RoundedBoxGeometry.js'", JSON.stringify(new URL('assets/RoundedBoxGeometry.js',baseURL).href))
       .replace("'./assets/realism.js'", JSON.stringify(new URL('assets/realism.js',baseURL).href));
