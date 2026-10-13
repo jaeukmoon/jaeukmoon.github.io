@@ -1,7 +1,7 @@
-import {deriveKey, decryptText, encryptText, fromBase64, iterations} from './crypto.js?v=dc0243ac2f97';
-import {setupAppInstall} from './install.js?v=dc0243ac2f97';
-import {loadDeviceAuth,saveDeviceAuth,forgetDeviceAuth} from './device-auth.js?v=dc0243ac2f97';
-import {setupUpdates} from './updates.js?v=dc0243ac2f97';
+import {deriveKey, decryptText, encryptText, fromBase64, iterations} from './crypto.js?v=8e1606a6d0c1';
+import {setupAppInstall} from './install.js?v=8e1606a6d0c1';
+import {loadDeviceAuth,saveDeviceAuth,forgetDeviceAuth} from './device-auth.js?v=8e1606a6d0c1';
+import {setupUpdates} from './updates.js?v=8e1606a6d0c1';
 const form = document.querySelector('#unlock-form');
 const input = document.querySelector('#password');
 const status = document.querySelector('#status');
@@ -48,7 +48,7 @@ async function unlock(savedAuth){
       .replace("'./sunlight.js'", JSON.stringify(sunlightURL))
       .replace("'./notes.js'", JSON.stringify(noteToolsURL))
       .replace("'./joystick.js'", JSON.stringify(joystickURL))
-      .replace("'./layout-approval.js'", JSON.stringify(layoutToolsURL))
+      .replace("'./layout-sharing.js'", JSON.stringify(layoutToolsURL))
       .replace("'./assets/frame-photo.jpg'", JSON.stringify(tvPhotoURL))
       .replace("'./assets/sofa-wall-photo.jpg'", JSON.stringify(wallPhotoURL))
       .replace("'./assets/OrbitControls.js'", JSON.stringify(new URL('assets/OrbitControls.js',baseURL).href))
@@ -80,9 +80,9 @@ async function unlock(savedAuth){
       loadApprovalState(){return storedValue(approvalKey,approvalAAD);},
       saveApprovalState(value){return encryptText(value,key,approvalAAD).then(encrypted=>localStorage.setItem(approvalKey,JSON.stringify(encrypted)));},
       async layoutRpc(path,payload){
-        if(!bundle.layoutEndpoint||!['pair','read','initialize','propose','approve','reject'].includes(path))throw new Error('가구 공유 연결을 준비하고 있습니다. 수정안은 이 기기에 저장됩니다.');
+        if(!bundle.layoutEndpoint||!['read','save'].includes(path))throw new Error('가구 공유 연결을 기다리고 있습니다. 변경은 이 기기에 보관됩니다.');
         const aad=direction=>new TextEncoder().encode(`home-layout/${path}/${direction}-v1`),encrypted=await encryptText(JSON.stringify(payload),key,aad('request')),controller=new AbortController(),timer=setTimeout(()=>controller.abort(),8000);
-        try{const response=await fetch(new URL(path,bundle.layoutEndpoint),{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(encrypted),signal:controller.signal});if(!response.ok)throw Object.assign(new Error(response.status===403?(['approve','reject','initialize'].includes(path)?'이 작업은 승인자 전용입니다.':'가구 공유 기기 연결 코드를 확인해주세요.'):response.status===409?'확정 배치가 바뀌었습니다. 수정안을 다시 검토해주세요.':'공유 요청을 완료하지 못했습니다. 수정안은 보존됩니다.'),{status:response.status});return JSON.parse(await decryptText(await response.json(),key,aad('response')));}
+        try{const response=await fetch(new URL(path,bundle.layoutEndpoint),{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(encrypted),signal:controller.signal});if(!response.ok)throw Object.assign(new Error(response.status===409?'다른 기기에서 공유 배치를 바꿨습니다. 내 변경은 보관됩니다.':'공유 요청을 완료하지 못했습니다. 변경은 보관됩니다.'),{status:response.status});return JSON.parse(await decryptText(await response.json(),key,aad('response')));}
         catch(error){if(error.status)throw error;throw new Error('집 PC의 가구 공유 연결을 기다리고 있습니다. 수정안은 이 기기에 저장됩니다.');}finally{clearTimeout(timer);}
       },
       loadMemoConnection(){return storedValue(connectionKey,connectionAAD);},
@@ -102,7 +102,7 @@ async function unlock(savedAuth){
       .replace('<script type="module" src="./app.js"></script>', `<script type="module" src="${appURL}"></script>`)
       .replace('<button id="save" class="primary">배치 저장</button>', '<div class="home-actions"><a id="install-app" href="#install-dialog" role="button">앱 받기</a><button id="refresh-home" type="button" title="최신 업데이트 불러오기">새로고침</button><button id="lock-home" title="기기 인증 지우고 잠그기">잠금</button><button id="save" class="primary">배치 저장</button></div>')
       .replace('</body>',`${appInstall.html}</body>`)
-      .replace('<meta charset="UTF-8">', `<meta charset="UTF-8"><meta name="robots" content="noindex,nofollow"><meta name="referrer" content="no-referrer"><meta name="theme-color" content="#28564b"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="욱봉 신혼집"><link rel="manifest" href="${new URL('manifest.webmanifest',baseURL).href}"><link rel="apple-touch-icon" href="${new URL('app-icons/apple-touch-icon.png',baseURL).href}"><link rel="stylesheet" href="${new URL('install.css?v=dc0243ac2f97',baseURL).href}">`);
+      .replace('<meta charset="UTF-8">', `<meta charset="UTF-8"><meta name="robots" content="noindex,nofollow"><meta name="referrer" content="no-referrer"><meta name="theme-color" content="#28564b"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="욱봉 신혼집"><link rel="manifest" href="${new URL('manifest.webmanifest',baseURL).href}"><link rel="apple-touch-icon" href="${new URL('app-icons/apple-touch-icon.png',baseURL).href}"><link rel="stylesheet" href="${new URL('install.css?v=8e1606a6d0c1',baseURL).href}">`);
     input.value = '';
     unlocked = true;
     document.open(); document.write(html); document.close();
