@@ -1,7 +1,7 @@
-import {deriveKey, decryptText, encryptText, fromBase64, iterations} from './crypto.js?v=4b48544f054c';
-import {setupAppInstall} from './install.js?v=4b48544f054c';
-import {loadDeviceAuth,saveDeviceAuth,forgetDeviceAuth} from './device-auth.js?v=4b48544f054c';
-import {setupUpdates} from './updates.js?v=4b48544f054c';
+import {deriveKey, decryptText, encryptText, fromBase64, iterations} from './crypto.js?v=82a76d089f62';
+import {setupAppInstall} from './install.js?v=82a76d089f62';
+import {loadDeviceAuth,saveDeviceAuth,forgetDeviceAuth} from './device-auth.js?v=82a76d089f62';
+import {setupUpdates} from './updates.js?v=82a76d089f62';
 const form = document.querySelector('#unlock-form');
 const input = document.querySelector('#password');
 const status = document.querySelector('#status');
@@ -10,7 +10,7 @@ const baseURL = new URL('./', location.href);
 const appInstall=setupAppInstall(baseURL);
 let busy=false;
 async function readPayload(){const url=new URL('home.encrypted.json',baseURL);url.searchParams.set('fresh',String(Date.now()));const response=await fetch(url,{cache:'no-store'});if(!response.ok)throw new Error('공간 데이터를 불러오지 못했습니다. 연결을 확인해주세요.');const text=await response.text(),envelope=JSON.parse(text);if(envelope.version!==1||envelope.iterations!==iterations||fromBase64(envelope.salt).length!==24)throw new Error('공간 데이터 형식이 올바르지 않습니다.');const digest=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(text));return {envelope,revision:Array.from(new Uint8Array(digest),b=>b.toString(16).padStart(2,'0')).join('')};}
-function validateBundle(bundle){for(const name of ['html','css','app','model','settings','photo','tvPhoto','sunlight','noteTools','joystick','layoutTools'])if(typeof bundle[name]!=='string')throw new Error('공간 파일이 불완전합니다.');}
+function validateBundle(bundle){for(const name of ['html','css','app','model','settings','photo','tvPhoto','wallPhoto','sunlight','noteTools','joystick','layoutTools'])if(typeof bundle[name]!=='string')throw new Error('공간 파일이 불완전합니다.');}
 document.querySelector('#show-password').onclick = event => {
   const visible = input.type === 'password';
   input.type = visible ? 'text' : 'password';
@@ -43,12 +43,14 @@ async function unlock(savedAuth){
     const joystickURL=URL.createObjectURL(new Blob([bundle.joystick],{type:'text/javascript'}));
     const layoutToolsURL=URL.createObjectURL(new Blob([bundle.layoutTools],{type:'text/javascript'}));
     const tvPhotoURL=URL.createObjectURL(new Blob([fromBase64(bundle.tvPhoto)],{type:'image/jpeg'}));
+    const wallPhotoURL=URL.createObjectURL(new Blob([fromBase64(bundle.wallPhoto)],{type:'image/jpeg'}));
     const app = bundle.app.replace("'./model.js'", JSON.stringify(modelURL))
       .replace("'./sunlight.js'", JSON.stringify(sunlightURL))
       .replace("'./notes.js'", JSON.stringify(noteToolsURL))
       .replace("'./joystick.js'", JSON.stringify(joystickURL))
       .replace("'./layout-approval.js'", JSON.stringify(layoutToolsURL))
       .replace("'./assets/frame-photo.jpg'", JSON.stringify(tvPhotoURL))
+      .replace("'./assets/sofa-wall-photo.jpg'", JSON.stringify(wallPhotoURL))
       .replace("'./assets/OrbitControls.js'", JSON.stringify(new URL('assets/OrbitControls.js',baseURL).href))
       .replace("'./assets/RoundedBoxGeometry.js'", JSON.stringify(new URL('assets/RoundedBoxGeometry.js',baseURL).href))
       .replace("'./assets/realism.js'", JSON.stringify(new URL('assets/realism.js',baseURL).href));
@@ -100,7 +102,7 @@ async function unlock(savedAuth){
       .replace('<script type="module" src="./app.js"></script>', `<script type="module" src="${appURL}"></script>`)
       .replace('<button id="save" class="primary">배치 저장</button>', '<div class="home-actions"><a id="install-app" href="#install-dialog" role="button">앱 받기</a><button id="refresh-home" type="button" title="최신 업데이트 불러오기">새로고침</button><button id="lock-home" title="기기 인증 지우고 잠그기">잠금</button><button id="save" class="primary">배치 저장</button></div>')
       .replace('</body>',`${appInstall.html}</body>`)
-      .replace('<meta charset="UTF-8">', `<meta charset="UTF-8"><meta name="robots" content="noindex,nofollow"><meta name="referrer" content="no-referrer"><meta name="theme-color" content="#28564b"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="욱봉 신혼집"><link rel="manifest" href="${new URL('manifest.webmanifest',baseURL).href}"><link rel="apple-touch-icon" href="${new URL('app-icons/apple-touch-icon.png',baseURL).href}"><link rel="stylesheet" href="${new URL('install.css?v=4b48544f054c',baseURL).href}">`);
+      .replace('<meta charset="UTF-8">', `<meta charset="UTF-8"><meta name="robots" content="noindex,nofollow"><meta name="referrer" content="no-referrer"><meta name="theme-color" content="#28564b"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="욱봉 신혼집"><link rel="manifest" href="${new URL('manifest.webmanifest',baseURL).href}"><link rel="apple-touch-icon" href="${new URL('app-icons/apple-touch-icon.png',baseURL).href}"><link rel="stylesheet" href="${new URL('install.css?v=82a76d089f62',baseURL).href}">`);
     input.value = '';
     unlocked = true;
     document.open(); document.write(html); document.close();
