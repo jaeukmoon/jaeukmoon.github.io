@@ -58,7 +58,8 @@
         <div class="intro__text">
           <p>
             I am a Staff Engineer at Samsung Research, working on LLM post-training (SFT/RLHF),
-            on-device health LLMs, and vision-language-action &amp; world models for robotics.
+            health time-series representation learning, on-device health LLMs,
+            and vision-language-action &amp; world models for robotics.
             I received my Ph.D. in Electrical and Computer Engineering from Korea University
             (MILAB, advised by Prof. Eenjun Hwang), where I authored 8 first-author SCIE
             publications on machine learning for forecasting — from GAN-based data augmentation
@@ -66,30 +67,18 @@
             predictive models both accurate and explainable, especially under data-scarce,
             real-world conditions.
           </p>
-          <p class="intro__skills-lead">Here are a few technologies I have been working with recently:</p>
+          <p class="intro__skills-lead"><strong>Research interests</strong></p>
           <div class="intro__skills">
             <ul class="tick-list">
-              <li>LLM Post-Training (SFT, RLHF)</li>
-              <li>LoRA / PEFT</li>
-              <li>Time-Series Forecasting</li>
-              <li>Meta-Learning (MAML)</li>
-              <li>GANs / Data Augmentation</li>
-              <li>Explainable AI (SHAP)</li>
-              <li>RAG &amp; LLM Agents</li>
-              <li>LLM Evaluation (LLM-as-a-Judge)</li>
+              <li>Time-Series Forecasting &amp; Foundation Models</li>
+              <li>Health &amp; Physiological Signal Representation Learning</li>
             </ul>
             <ul class="tick-list">
-              <li>Python</li>
-              <li>PyTorch</li>
-              <li>TensorFlow</li>
-              <li>LLaMA-Factory</li>
-              <li>vLLM</li>
-              <li>SGLang</li>
-              <li>DeepSpeed</li>
-              <li>Ray</li>
-              <li>HuggingFace</li>
+              <li>LLM Post-Training &amp; Evaluation</li>
+              <li>Vision-Language-Action &amp; World Models</li>
             </ul>
           </div>
+          <p class="intro__skills-lead"><strong>Tools:</strong> Python · PyTorch · Hugging Face · vLLM</p>
         </div>
 
         <aside class="intro__aside" aria-label="Profile and education">
@@ -141,6 +130,7 @@
         <ul class="tick-list tick-list--roomy">
           <li>Conduct LLM post-training research — supervised fine-tuning (SFT) and reinforcement learning from human feedback (RLHF) — to improve alignment and deployability of Samsung Gauss, Samsung’s internal LLM.</li>
           <li>Develop an on-device LLM for wearable health monitoring, applying time-series forecasting and self-supervised learning to extract health signals from noisy wearable sensor data.</li>
+          <li>Develop self-supervised representations of continuous glucose monitoring (CGM) data, adapting time-series foundation models for health-related classification and postprandial glucose response prediction under limited pretraining data.</li>
           <li>Research vision-language-action (VLA) models and world models for robotics, coupling action-conditioned future prediction with policy learning to ground robot actions in physical dynamics.</li>
           <li>Lead independent research on LLM-based influenza-like illness (ILI) forecasting, integrating multimodal inputs (numerical time series + textual surveillance reports) for explainable predictions.</li>
         </ul>
@@ -591,8 +581,21 @@
           <div class="build__body">
             <h3 class="build__title"><a href="https://jaeukmoon.github.io/cockpit/" target="_blank" rel="noreferrer noopener">WorldBestQuant</a></h3>
             <p class="build__desc">An end-to-end personal quant investing system for Korean equities: point-in-time data, factor research, backtesting, monthly portfolio tracking, and rule-based risk controls. Its Korean small-cap live record compounded +21.8% from July 2025 to April 2026, with brokerage fees reflected and assumptions disclosed.</p>
+            <p class="build__desc"><strong>Separate research backtest:</strong> 52.9% CAGR · −22.0% max drawdown.<br>Aug 2017–Aug 2026 · Development-period results with fees and tax; 0 bps slippage. <a href="https://jaeukmoon.github.io/cockpit/#backtest">Assumptions &amp; sensitivity →</a></p>
             <ul class="tags"><li>Quant Investing</li><li>Backtesting</li><li>Data Engineering</li><li>Risk Controls</li></ul>
             <a class="build__link" href="https://jaeukmoon.github.io/cockpit/" target="_blank" rel="noreferrer noopener">View case study &rarr;</a>
+          </div>
+        </li>
+
+        <li class="build">
+          <a class="build__thumb" href="https://jaeukmoon.github.io/wm-survey-site/" target="_blank" rel="noreferrer noopener" aria-label="Open Physical AI Paper Survey">
+            <img src="assets/builds/physical-ai-survey.svg" alt="Physical AI Paper Survey workflow: collect papers, verify source evidence, and explore summaries and study guides" loading="lazy" width="880" height="550">
+          </a>
+          <div class="build__body">
+            <h3 class="build__title"><a href="https://jaeukmoon.github.io/wm-survey-site/" target="_blank" rel="noreferrer noopener">Physical AI Paper Survey</a></h3>
+            <p class="build__desc">Built a research discovery pipeline for robot learning, VLA models, and world models, combining automated paper collection with source-grounded summaries and a searchable study interface. Includes detailed reading guides and dataset references.</p>
+            <ul class="tags"><li>Physical AI</li><li>Research Automation</li><li>LLM Summarization</li><li>Source Verification</li></ul>
+            <a class="build__link" href="https://jaeukmoon.github.io/wm-survey-site/" target="_blank" rel="noreferrer noopener">Visit site &rarr;</a>
           </div>
         </li>
 
