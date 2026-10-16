@@ -62,10 +62,11 @@
     if (identity) headers.Authorization = `Bearer ${identity}`;
   } catch (_) { /* Counting also works when browser storage is unavailable. */ }
   const production = location.origin === 'https://jaeukmoon.github.io';
+  const automated = navigator.webdriver || /HeadlessChrome\//.test(navigator.userAgent);
   const controller = new AbortController();
   const timeout = setTimeout(() => controller.abort(), 8000);
   fetch(api, {
-    method: production && !navigator.webdriver ? 'POST' : 'GET',
+    method: production && !automated ? 'POST' : 'GET',
     headers, credentials: 'omit', referrerPolicy: 'no-referrer', cache: 'no-store',
     signal: controller.signal
   }).then(async response => {
