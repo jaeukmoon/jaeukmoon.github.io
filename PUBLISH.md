@@ -1,5 +1,14 @@
 # PUBLISH.md — 공개 게시 규칙 (vault → site)
 
+## Current master resume source (2026-10-15)
+
+- The navigation download points to `assets/master-resume.pdf`, a public-safe PDF export of the general master `Jaeuk_Moon_Resume_Master_261014.docx` in the author's OneDrive employment folder. Do not substitute an employer-specific or quant-targeted resume. Publish PDF only; keep conversion DOCX files outside the site.
+- Authoritative source SHA-256: `1b755e6913b21816da78a4323e92dc0e0d0ae9478f8dd62b1cff933a191a8d3a`. The original master remains unchanged.
+- The conversion source retains the original paragraph structure and formatting except for removing private address/phone details from both headers and generalizing private product/client/partner descriptions and unpublished CGM results. Only the approved public email remains in the contact line. Eight leading alignment spaces in the graduate education date were removed in the conversion copy to prevent the year wrapping; resume wording is unchanged.
+- This is a versioned publication copy, not an automatic OneDrive synchronization link. Refresh it deliberately when a new general master is approved.
+- The previous `assets/resume.pdf` is no longer linked from navigation. Both document paths remain excluded from indexing.
+- Exported using LibreOffice Writer in Home Windows WSL with the existing Windows fonts. Both PDF pages were rendered and visually inspected; text preservation, public-content checks, and the actual browser download were verified. Do not represent the stale September preview PDF as the current master.
+
 이 repo는 **공개 산출물**이다. 원본(source of truth)은 비공개 `~/github/knowledge-vault/portfolio/`
 (+ resume: `knowledge-vault/job-applications/resume/`). 콘텐츠 수정은 vault에서 하고,
 사이트에는 아래 규칙을 통과한 sanitized 영문 요약만 반영한다.

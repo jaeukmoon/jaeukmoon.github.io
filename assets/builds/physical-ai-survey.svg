@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="550" viewBox="0 0 880 550" role="img" aria-labelledby="title desc">
+  <title id="title">Physical AI Paper Survey</title>
+  <desc id="desc">A research workflow for robot learning: collect papers, verify evidence, and explore summaries.</desc>
+  <rect width="880" height="550" fill="#f2f7fa"/>
+  <rect x="40" y="38" width="800" height="474" rx="18" fill="#fff" stroke="#dce5eb"/>
+  <g font-family="Inter,Segoe UI,Arial,sans-serif">
+    <text x="78" y="99" font-size="15" font-weight="600" fill="#17708c" letter-spacing="2">RESEARCH DISCOVERY</text>
+    <text x="78" y="153" font-size="37" font-weight="700" fill="#172a38">Physical AI Paper Survey</text>
+    <text x="78" y="191" font-size="19" fill="#617587">Robot learning · VLA · World models</text>
+    <path d="M78 224H802" stroke="#e3eaf0"/>
+    <g fill="#f2f7fa" stroke="#dce5eb">
+      <rect x="78" y="258" width="220" height="143" rx="12"/>
+      <rect x="330" y="258" width="220" height="143" rx="12"/>
+      <rect x="582" y="258" width="220" height="143" rx="12"/>
+    </g>
+    <g fill="#17708c" font-size="14" font-weight="600">
+      <text x="100" y="293">COLLECT</text><text x="352" y="293">VERIFY</text><text x="604" y="293">EXPLORE</text>
+    </g>
+    <g fill="#172a38" font-size="21" font-weight="600">
+      <text x="100" y="335">Relevant papers</text><text x="352" y="335">Source evidence</text><text x="604" y="335">Research ideas</text>
+    </g>
+    <g fill="#617587" font-size="16">
+      <text x="100" y="369">Automated discovery</text><text x="352" y="369">Grounded summaries</text><text x="604" y="369">Search &amp; study guides</text>
+    </g>
+    <path d="M305 330h17m-6-6 6 6-6 6M557 330h17m-6-6 6 6-6 6" fill="none" stroke="#17708c" stroke-width="2"/>
+    <text x="78" y="461" font-size="17" fill="#617587">From new papers to a searchable research library.</text>
+  </g>
+</svg>
