@@ -1,7 +1,7 @@
-import {deriveKey, decryptText, encryptText, fromBase64, iterations} from './crypto.js?v=3882ae099796';
-import {setupAppInstall} from './install.js?v=3882ae099796';
-import {loadDeviceAuth,saveDeviceAuth,forgetDeviceAuth} from './device-auth.js?v=3882ae099796';
-import {setupUpdates} from './updates.js?v=3882ae099796';
+import {deriveKey, decryptText, encryptText, fromBase64, iterations} from './crypto.js?v=ac77c0b3b2f8';
+import {setupAppInstall} from './install.js?v=ac77c0b3b2f8';
+import {loadDeviceAuth,saveDeviceAuth,forgetDeviceAuth} from './device-auth.js?v=ac77c0b3b2f8';
+import {setupUpdates} from './updates.js?v=ac77c0b3b2f8';
 const form = document.querySelector('#unlock-form');
 const input = document.querySelector('#password');
 const status = document.querySelector('#status');
@@ -102,7 +102,7 @@ async function unlock(savedAuth){
       .replace('<script type="module" src="./app.js"></script>', `<script type="module" src="${appURL}"></script>`)
       .replace('<button id="save" class="primary">배치 저장</button>', '<div class="home-actions"><a id="install-app" href="#install-dialog" role="button">앱 받기</a><button id="refresh-home" type="button" title="최신 업데이트 불러오기">새로고침</button><button id="lock-home" title="기기 인증 지우고 잠그기">잠금</button><button id="save" class="primary">배치 저장</button></div>')
       .replace('</body>',`${appInstall.html}</body>`)
-      .replace('<meta charset="UTF-8">', `<meta charset="UTF-8"><meta name="robots" content="noindex,nofollow"><meta name="referrer" content="no-referrer"><meta name="theme-color" content="#28564b"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="욱봉 신혼집"><link rel="manifest" href="${new URL('manifest.webmanifest',baseURL).href}"><link rel="apple-touch-icon" href="${new URL('app-icons/apple-touch-icon.png',baseURL).href}"><link rel="stylesheet" href="${new URL('install.css?v=3882ae099796',baseURL).href}">`);
+      .replace('<meta charset="UTF-8">', `<meta charset="UTF-8"><meta name="robots" content="noindex,nofollow"><meta name="referrer" content="no-referrer"><meta name="theme-color" content="#28564b"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="욱봉 신혼집"><link rel="manifest" href="${new URL('manifest.webmanifest',baseURL).href}"><link rel="apple-touch-icon" href="${new URL('app-icons/apple-touch-icon.png',baseURL).href}"><link rel="stylesheet" href="${new URL('install.css?v=ac77c0b3b2f8',baseURL).href}">`);
     input.value = '';
     unlocked = true;
     document.open(); document.write(html); document.close();
